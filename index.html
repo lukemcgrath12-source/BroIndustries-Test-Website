@@ -127,43 +127,33 @@
   /* ── HERO ── */
   .hero {
     position: relative;
-    min-height: 100vh;
-    display: flex; align-items: stretch;
-    background: #0a0a0a;
-    overflow: hidden;
-  }
-
-  .hero-split {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    width: 100%;
-    min-height: 100vh;
-  }
-
-  .hero-left {
+    height: 100vh; min-height: 700px;
     display: flex; flex-direction: column;
-    justify-content: center;
-    padding: 7rem 4rem 5rem 5rem;
-    position: relative; z-index: 1;
+    align-items: center; justify-content: center;
+    overflow: hidden;
+    background: #0a0a0a;
   }
 
-  .hero-right {
-    display: flex; align-items: center; justify-content: center;
-    padding: 5rem 4rem 5rem 2rem;
-    position: relative; z-index: 1;
-  }
-
-  .hero-foreground-video {
-    width: 100%;
-    height: auto;
-    max-height: 75vh;
+  .hero-video {
+    position: absolute; top: 0; left: 0;
+    width: 100%; height: 100%;
     object-fit: cover;
-    border-radius: 8px;
-    display: block;
+    z-index: 0;
+  }
+
+  .hero-overlay {
+    position: absolute; top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(10,10,10,0.60);
+    z-index: 1;
+    pointer-events: none;
   }
 
   .hero-content {
-    text-align: left;
+    position: relative;
+    text-align: center;
+    padding: 1.5rem 2rem;
+    z-index: 2;
   }
 
   .hero-eyebrow {
@@ -172,16 +162,16 @@
     letter-spacing: 0.45em; text-transform: uppercase;
     color: var(--orange);
     margin-bottom: 1.5rem;
-    display: flex; align-items: center; justify-content: flex-start; gap: 1rem;
+    display: flex; align-items: center; justify-content: center; gap: 1rem;
   }
-  .hero-eyebrow::before {
+  .hero-eyebrow::before, .hero-eyebrow::after {
     content: ''; width: 28px; height: 1px;
     background: var(--orange); opacity: 0.6;
   }
 
   .hero-title {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: clamp(4rem, 7vw, 8rem);
+    font-size: clamp(4rem, 10vw, 9rem);
     font-weight: 900;
     line-height: 0.88;
     letter-spacing: -0.02em;
@@ -192,16 +182,16 @@
   .hero-title .accent { color: var(--orange); }
 
   .hero-sub {
-    font-size: clamp(0.9rem, 1.2vw, 1.05rem);
+    font-size: clamp(0.9rem, 1.5vw, 1.1rem);
     color: var(--grey-light);
     line-height: 1.7;
-    max-width: 440px;
-    margin: 0 0 2rem;
-    text-align: left;
+    max-width: 480px;
+    margin: 0 auto 2rem;
+    text-align: center;
   }
 
   .hero-cta-row {
-    display: flex; align-items: center; justify-content: flex-start; gap: 1rem;
+    display: flex; align-items: center; justify-content: center; gap: 1rem;
   }
 
   .btn-primary {
@@ -236,7 +226,7 @@
   /* trust badge pills */
   .hero-trust-row {
     display: flex; flex-wrap: wrap;
-    align-items: center; justify-content: flex-start;
+    align-items: center; justify-content: center;
     gap: 0.5rem;
     margin-top: 1.5rem;
   }
@@ -910,28 +900,6 @@
     :root { --section-pad: 4rem; }
     nav { padding: 0 1.5rem; }
     .nav-links { display: none; }
-    .hero-split {
-      grid-template-columns: 1fr;
-      grid-template-rows: auto auto;
-      min-height: 100vh;
-    }
-    .hero-right {
-      order: -1;
-      padding: 6rem 1.5rem 1.5rem;
-    }
-    .hero-foreground-video {
-      max-height: 55vw;
-      min-height: 220px;
-    }
-    .hero-left {
-      padding: 2rem 1.5rem 4rem;
-    }
-    .hero-content { text-align: center; }
-    .hero-eyebrow { justify-content: center; }
-    .hero-eyebrow::before { display: none; }
-    .hero-sub { text-align: center; margin: 0 auto 2rem; }
-    .hero-cta-row { justify-content: center; }
-    .hero-trust-row { justify-content: center; }
     .section { padding: 4rem 1.5rem; }
     .stats-bar { grid-template-columns: repeat(2,1fr); }
     .stat-item { border-right: none; border-bottom: 1px solid var(--border); }
@@ -1012,28 +980,23 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-split">
-    <div class="hero-left">
-      <div class="hero-content">
-        <p class="hero-eyebrow">BRO Industries · Sydney & Greater Western Sydney</p>
-        <h1 class="hero-title">Need a<br><span class="accent">Plumber?</span></h1>
-        <p class="hero-sub">Licensed plumbing across Sydney and Greater Western Sydney. Delivered with honesty, integrity, and 55+ years of combined expertise.</p>
-        <div class="hero-cta-row">
-          <a href="#contact" class="btn-primary">Request a Quote</a>
-          <a href="#capabilities" class="btn-outline">Our Services</a>
-        </div>
-        <div class="hero-trust-row">
-          <span class="trust-pill">Licensed &amp; Insured</span>
-          <span class="trust-pill">Family Operated</span>
-          <span class="trust-pill">Same-Day Available</span>
-          <span class="trust-pill">55+ Years Experience</span>
-        </div>
-      </div>
+  <video class="hero-video" autoplay muted loop playsinline>
+    <source src="Bro_Industries_-_Website_Banner_Video.mp4" type="video/mp4">
+  </video>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">BRO Industries · Sydney & Greater Western Sydney</p>
+    <h1 class="hero-title">Need a<br><span class="accent">Plumber?</span></h1>
+    <p class="hero-sub">Licensed plumbing across Sydney and Greater Western Sydney. Delivered with honesty, integrity, and 55+ years of combined expertise.</p>
+    <div class="hero-cta-row">
+      <a href="#contact" class="btn-primary">Request a Quote</a>
+      <a href="#capabilities" class="btn-outline">Our Services</a>
     </div>
-    <div class="hero-right">
-      <video class="hero-foreground-video" autoplay muted loop playsinline>
-        <source src="Bro_Industries_-_Website_Banner_Video.mp4" type="video/mp4">
-      </video>
+    <div class="hero-trust-row">
+      <span class="trust-pill">Licensed &amp; Insured</span>
+      <span class="trust-pill">Family Operated</span>
+      <span class="trust-pill">Same-Day Available</span>
+      <span class="trust-pill">55+ Years Experience</span>
     </div>
   </div>
 </section>
