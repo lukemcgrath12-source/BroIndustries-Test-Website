@@ -127,63 +127,43 @@
   /* ── HERO ── */
   .hero {
     position: relative;
-    height: 100vh; min-height: 700px;
-    display: flex; flex-direction: column;
-    align-items: center; justify-content: center;
+    min-height: 100vh;
+    display: flex; align-items: stretch;
+    background: #0a0a0a;
     overflow: hidden;
-    background: var(--black);
   }
 
-  /* WebGL mesh gradient canvas */
-  #hero-canvas {
-    position: absolute; inset: 0;
-    width: 100%; height: 100%;
+  .hero-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    min-height: 100vh;
+  }
+
+  .hero-left {
+    display: flex; flex-direction: column;
+    justify-content: center;
+    padding: 7rem 4rem 5rem 5rem;
+    position: relative; z-index: 1;
+  }
+
+  .hero-right {
+    display: flex; align-items: center; justify-content: center;
+    padding: 5rem 4rem 5rem 2rem;
+    position: relative; z-index: 1;
+  }
+
+  .hero-foreground-video {
+    width: 100%;
+    height: auto;
+    max-height: 75vh;
+    object-fit: cover;
+    border-radius: 8px;
     display: block;
   }
 
-  /* dark vignette + bottom fade over canvas */
-  .hero-video {
-    position: absolute; inset: 0;
-    width: 100%; height: 100%;
-    object-fit: cover;
-    object-position: center;
-    z-index: 0;
-  }
-
-  .hero-overlay {
-    position: absolute; inset: 0;
-    background: rgba(10,10,10,0.55);
-    z-index: 1;
-    pointer-events: none;
-  }
-
-  .hero-glow {
-    position: absolute; inset: 0;
-    background:
-      radial-gradient(ellipse 80% 80% at 50% 50%, transparent 30%, rgba(10,10,10,0.55) 100%),
-      linear-gradient(to bottom, rgba(10,10,10,0.25) 0%, transparent 35%, rgba(10,10,10,0.88) 100%);
-    pointer-events: none;
-    z-index: 2;
-  }
-
-  /* dot grid top-right */
-  .hero-dots {
-    position: absolute; top: 100px; right: 80px;
-    display: grid;
-    grid-template-columns: repeat(8, 28px);
-    grid-template-rows: repeat(8, 28px);
-    gap: 4px; opacity: 0.1;
-    z-index: 3;
-  }
-  .hero-dots span {
-    width: 3px; height: 3px;
-    background: var(--orange); border-radius: 50%;
-    justify-self: center; align-self: center;
-  }
-
   .hero-content {
-    position: relative; text-align: center; padding: 1.5rem 2rem;
-    z-index: 4;
+    text-align: left;
   }
 
   .hero-eyebrow {
@@ -192,16 +172,16 @@
     letter-spacing: 0.45em; text-transform: uppercase;
     color: var(--orange);
     margin-bottom: 1.5rem;
-    display: flex; align-items: center; justify-content: center; gap: 1rem;
+    display: flex; align-items: center; justify-content: flex-start; gap: 1rem;
   }
-  .hero-eyebrow::before, .hero-eyebrow::after {
+  .hero-eyebrow::before {
     content: ''; width: 28px; height: 1px;
     background: var(--orange); opacity: 0.6;
   }
 
   .hero-title {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: clamp(4rem, 10vw, 9rem);
+    font-size: clamp(4rem, 7vw, 8rem);
     font-weight: 900;
     line-height: 0.88;
     letter-spacing: -0.02em;
@@ -212,16 +192,16 @@
   .hero-title .accent { color: var(--orange); }
 
   .hero-sub {
-    font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+    font-size: clamp(0.9rem, 1.2vw, 1.05rem);
     color: var(--grey-light);
     line-height: 1.7;
-    max-width: 480px;
-    margin: 0 auto 2rem;
-    text-align: center;
+    max-width: 440px;
+    margin: 0 0 2rem;
+    text-align: left;
   }
 
   .hero-cta-row {
-    display: flex; align-items: center; justify-content: center; gap: 1rem;
+    display: flex; align-items: center; justify-content: flex-start; gap: 1rem;
   }
 
   .btn-primary {
@@ -256,7 +236,7 @@
   /* trust badge pills */
   .hero-trust-row {
     display: flex; flex-wrap: wrap;
-    align-items: center; justify-content: center;
+    align-items: center; justify-content: flex-start;
     gap: 0.5rem;
     margin-top: 1.5rem;
   }
@@ -930,7 +910,28 @@
     :root { --section-pad: 4rem; }
     nav { padding: 0 1.5rem; }
     .nav-links { display: none; }
-    .hero-dots { display: none; }
+    .hero-split {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto;
+      min-height: 100vh;
+    }
+    .hero-right {
+      order: -1;
+      padding: 6rem 1.5rem 1.5rem;
+    }
+    .hero-foreground-video {
+      max-height: 55vw;
+      min-height: 220px;
+    }
+    .hero-left {
+      padding: 2rem 1.5rem 4rem;
+    }
+    .hero-content { text-align: center; }
+    .hero-eyebrow { justify-content: center; }
+    .hero-eyebrow::before { display: none; }
+    .hero-sub { text-align: center; margin: 0 auto 2rem; }
+    .hero-cta-row { justify-content: center; }
+    .hero-trust-row { justify-content: center; }
     .section { padding: 4rem 1.5rem; }
     .stats-bar { grid-template-columns: repeat(2,1fr); }
     .stat-item { border-right: none; border-bottom: 1px solid var(--border); }
@@ -1011,41 +1012,29 @@
 
 <!-- HERO -->
 <section class="hero">
-  <video class="hero-video" autoplay muted loop playsinline>
-    <source src="Bro_Industries_-_Website_Banner_Video.mp4" type="video/mp4">
-  </video>
-  <div class="hero-overlay"></div>
-  <div class="hero-glow"></div>
-  <div class="hero-dots" aria-hidden="true">
-    <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-    <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-    <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-    <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-    <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-    <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-    <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-    <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-  </div>
-
-  <div class="hero-content">
-    <p class="hero-eyebrow">BRO Industries · Sydney & Greater Western Sydney</p>
-    <h1 class="hero-title">Need a<br><span class="accent">Plumber?</span></h1>
-    <p class="hero-sub">Licensed plumbing across Sydney and Greater Western Sydney. Delivered with honesty, integrity, and 55+ years of combined expertise.</p>
-    <div class="hero-cta-row">
-      <a href="#contact" class="btn-primary">Request a Quote</a>
-      <a href="#capabilities" class="btn-outline">Our Services</a>
+  <div class="hero-split">
+    <div class="hero-left">
+      <div class="hero-content">
+        <p class="hero-eyebrow">BRO Industries · Sydney & Greater Western Sydney</p>
+        <h1 class="hero-title">Need a<br><span class="accent">Plumber?</span></h1>
+        <p class="hero-sub">Licensed plumbing across Sydney and Greater Western Sydney. Delivered with honesty, integrity, and 55+ years of combined expertise.</p>
+        <div class="hero-cta-row">
+          <a href="#contact" class="btn-primary">Request a Quote</a>
+          <a href="#capabilities" class="btn-outline">Our Services</a>
+        </div>
+        <div class="hero-trust-row">
+          <span class="trust-pill">Licensed &amp; Insured</span>
+          <span class="trust-pill">Family Operated</span>
+          <span class="trust-pill">Same-Day Available</span>
+          <span class="trust-pill">55+ Years Experience</span>
+        </div>
+      </div>
     </div>
-    <div class="hero-trust-row">
-      <span class="trust-pill">Licensed &amp; Insured</span>
-      <span class="trust-pill">Family Operated</span>
-      <span class="trust-pill">Same-Day Available</span>
-      <span class="trust-pill">55+ Years Experience</span>
+    <div class="hero-right">
+      <video class="hero-foreground-video" autoplay muted loop playsinline>
+        <source src="Bro_Industries_-_Website_Banner_Video.mp4" type="video/mp4">
+      </video>
     </div>
-  </div>
-
-  <div class="hero-scroll" aria-hidden="true">
-    <div class="hero-scroll-line"></div>
-    <span class="hero-scroll-text">Scroll</span>
   </div>
 </section>
 
