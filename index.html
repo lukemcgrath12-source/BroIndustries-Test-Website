@@ -388,13 +388,46 @@
   .cap-card:hover .cap-line { width: 100%; }
 
   /* ── PROJECTS ── */
-  .projects-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2px; background: var(--border);
+  /* ── PROJECTS CAROUSEL ── */
+  .projects-carousel-wrap {
+    position: relative;
   }
 
+  .projects-carousel {
+    display: flex;
+    gap: 2px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .projects-carousel::-webkit-scrollbar { display: none; }
+
+  .carousel-btn {
+    position: absolute;
+    top: 50%; transform: translateY(-50%);
+    width: 48px; height: 48px;
+    background: var(--dark-3);
+    border: 1px solid var(--border);
+    color: var(--orange);
+    font-size: 1.25rem; line-height: 1;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    z-index: 10;
+    transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+  }
+  .carousel-btn:hover {
+    background: var(--orange);
+    border-color: var(--orange);
+    color: var(--dark-1);
+  }
+  .carousel-btn-prev { left: -24px; }
+  .carousel-btn-next { right: -24px; }
+
   .project-card {
+    flex: 0 0 calc(50% - 1px);
+    scroll-snap-align: start;
     position: relative;
     aspect-ratio: 4/3; overflow: hidden;
     cursor: pointer;
@@ -868,7 +901,8 @@
     .stat-item:nth-child(3), .stat-item:nth-child(4) { border-bottom: none; }
     .capabilities-header { grid-template-columns: 1fr; gap: 2rem; }
     .capabilities-grid { grid-template-columns: 1fr 1fr; }
-    .projects-grid { grid-template-columns: 1fr; }
+    .projects-carousel .project-card { flex: 0 0 100%; }
+    .carousel-btn { display: none; }
     .reviews-grid { grid-template-columns: 1fr; }
     .team-grid { grid-template-columns: 1fr; max-width: 420px; }
     .reviews-header { flex-direction: column; align-items: flex-start; gap: 1.5rem; }
@@ -1060,23 +1094,59 @@
 <section class="section" id="projects">
   <div class="section-label">Our Work</div>
   <h2 class="section-title" style="margin-bottom:3rem">Selected <span class="accent">Projects</span></h2>
-  <div class="projects-grid">
-    <div class="project-card">
-      <img src="images/projects/1.png" alt="Daikin split system installation Sutherland Shire">
-      <div class="project-info">
-        <div class="project-category">Air Conditioning Installation</div>
-        <div class="project-title">Daikin Split System Install</div>
-        <div class="project-location">Sutherland Shire, NSW</div>
+  <div class="projects-carousel-wrap">
+    <button class="carousel-btn carousel-btn-prev" onclick="scrollCarousel(-1)" aria-label="Previous project">&#8592;</button>
+    <div class="projects-carousel" id="projectsCarousel">
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80&auto=format&fit=crop" alt="Daikin split system installation Sutherland Shire">
+        <div class="project-info">
+          <div class="project-category">Air Conditioning Installation</div>
+          <div class="project-title">Daikin Split System Install</div>
+          <div class="project-location">Sutherland Shire, NSW</div>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80&auto=format&fit=crop" alt="Commercial HVAC stormwater installation Blacktown">
+        <div class="project-info">
+          <div class="project-category">Commercial HVAC</div>
+          <div class="project-title">Stormwater System Installation</div>
+          <div class="project-location">Blacktown, NSW</div>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=800&q=80&auto=format&fit=crop" alt="Full bathroom renovation Parramatta">
+        <div class="project-info">
+          <div class="project-category">Bathroom Renovation</div>
+          <div class="project-title">Full Bathroom Fit-Out</div>
+          <div class="project-location">Parramatta, NSW</div>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80&auto=format&fit=crop" alt="Hot water system replacement Penrith">
+        <div class="project-info">
+          <div class="project-category">Hot Water Systems</div>
+          <div class="project-title">Gas Hot Water Replacement</div>
+          <div class="project-location">Penrith, NSW</div>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800&q=80&auto=format&fit=crop" alt="Blocked drain clearing Castle Hill">
+        <div class="project-info">
+          <div class="project-category">Blocked Drains</div>
+          <div class="project-title">CCTV Drain Inspection &amp; Clear</div>
+          <div class="project-location">Castle Hill, NSW</div>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80&auto=format&fit=crop" alt="Kitchen plumbing refit Baulkham Hills">
+        <div class="project-info">
+          <div class="project-category">General Plumbing</div>
+          <div class="project-title">Kitchen Plumbing Refit</div>
+          <div class="project-location">Baulkham Hills, NSW</div>
+        </div>
       </div>
     </div>
-    <div class="project-card">
-      <img src="images/projects/2.png" alt="Commercial HVAC stormwater installation Blacktown">
-      <div class="project-info">
-        <div class="project-category">Commercial HVAC</div>
-        <div class="project-title">Stormwater System Installation</div>
-        <div class="project-location">Blacktown, NSW</div>
-      </div>
-    </div>
+    <button class="carousel-btn carousel-btn-next" onclick="scrollCarousel(1)" aria-label="Next project">&#8594;</button>
   </div>
 </section>
 
@@ -1300,6 +1370,14 @@
   <span class="emergency-bar-text">⚡ 24/7 Emergency Plumbing —</span>
   <a href="tel:0429967151">Call 0429 967 151 Now</a>
 </div>
+
+<script>
+  function scrollCarousel(dir) {
+    var c = document.getElementById('projectsCarousel');
+    var card = c.querySelector('.project-card');
+    c.scrollBy({ left: dir * (card.offsetWidth + 2), behavior: 'smooth' });
+  }
+</script>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   (function() {
