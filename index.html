@@ -165,7 +165,7 @@
   }
 
   .hero-content {
-    position: relative; text-align: center; padding: 2rem;
+    position: relative; text-align: center; padding: 1.5rem 2rem;
   }
 
   .hero-eyebrow {
@@ -189,7 +189,7 @@
     letter-spacing: -0.02em;
     text-transform: uppercase;
     color: var(--white);
-    margin-bottom: 1.25rem;
+    margin-bottom: 1rem;
   }
   .hero-title .accent { color: var(--orange); }
 
@@ -198,7 +198,7 @@
     color: var(--grey-light);
     line-height: 1.7;
     max-width: 480px;
-    margin: 0 auto 2.5rem;
+    margin: 0 auto 2rem;
     text-align: center;
   }
 
@@ -225,14 +225,34 @@
     font-size: 0.75rem; font-weight: 700;
     letter-spacing: 0.2em; text-transform: uppercase;
     color: var(--white);
-    border: 1px solid var(--border);
+    background: transparent;
+    border: 1px solid var(--white);
     padding: 1rem 2.25rem;
-    transition: border-color 0.2s ease, transform 0.15s ease;
+    transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease;
     display: inline-block;
   }
-  .btn-outline:hover { border-color: var(--grey); transform: translateY(-2px); }
+  .btn-outline:hover { background: var(--white); color: var(--black); transform: translateY(-2px); }
   .btn-outline:active { transform: translateY(0); }
   .btn-outline:focus-visible { outline: 2px solid var(--orange); outline-offset: 4px; }
+
+  /* trust badge pills */
+  .hero-trust-row {
+    display: flex; flex-wrap: wrap;
+    align-items: center; justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+  }
+  .trust-pill {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.65rem; font-weight: 700;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--white);
+    background: #1a1a1a;
+    border: 1px solid var(--orange);
+    padding: 0.35rem 0.85rem;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
 
   /* scroll indicator */
   .hero-scroll {
@@ -994,6 +1014,12 @@
     <div class="hero-cta-row">
       <a href="#contact" class="btn-primary">Request a Quote</a>
       <a href="#capabilities" class="btn-outline">Our Services</a>
+    </div>
+    <div class="hero-trust-row">
+      <span class="trust-pill">Licensed &amp; Insured</span>
+      <span class="trust-pill">Family Operated</span>
+      <span class="trust-pill">Same-Day Available</span>
+      <span class="trust-pill">55+ Years Experience</span>
     </div>
   </div>
 
