@@ -350,9 +350,10 @@
 
   .cap-card {
     background: var(--dark-2);
-    padding: 2.5rem 1.75rem;
+    padding: 2.5rem 2rem;
     position: relative; overflow: hidden;
     cursor: default;
+    display: flex; flex-direction: column;
     transition: background 0.3s ease, transform 0.2s ease;
     border-left: 3px solid transparent;
   }
@@ -364,12 +365,10 @@
 
   .cap-number {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.6rem; font-weight: 700;
-    letter-spacing: 0.3em; text-transform: uppercase;
-    color: var(--orange); margin-bottom: 1.25rem;
+    font-size: 3rem; font-weight: 900;
+    line-height: 1; letter-spacing: -0.02em;
+    color: var(--orange); margin-bottom: 1.5rem;
   }
-
-  .cap-icon { font-size: 1.75rem; margin-bottom: 1rem; opacity: 0.85; }
 
   .cap-title {
     font-family: 'Barlow Condensed', sans-serif;
@@ -378,7 +377,7 @@
     color: var(--white); margin-bottom: 0.6rem;
   }
 
-  .cap-desc { font-size: 0.8rem; color: var(--grey); line-height: 1.7; }
+  .cap-desc { font-size: 0.875rem; color: var(--grey); line-height: 1.7; }
 
   /* orange slide-in bottom line */
   .cap-line {
@@ -387,15 +386,6 @@
     transition: width 0.4s ease;
   }
   .cap-card:hover .cap-line { width: 100%; }
-
-  /* bg number watermark */
-  .cap-bg-num {
-    position: absolute; bottom: 12px; right: 16px;
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 4rem; font-weight: 900;
-    color: rgba(232,118,26,0.05);
-    line-height: 1; letter-spacing: -0.02em;
-  }
 
   /* ── PROJECTS ── */
   .projects-grid {
@@ -1015,66 +1005,50 @@
   <div class="capabilities-grid">
     <div class="cap-card">
       <div class="cap-number">01</div>
-      <div class="cap-icon">🚰</div>
       <div class="cap-title">Blocked Drains</div>
       <p class="cap-desc">High-pressure jetting, CCTV inspection, and permanent drain clearing for residential and commercial properties.</p>
-      <div class="cap-bg-num">01</div>
       <div class="cap-line"></div>
     </div>
     <div class="cap-card">
       <div class="cap-number">02</div>
-      <div class="cap-icon">🔧</div>
       <div class="cap-title">General Plumbing</div>
       <p class="cap-desc">All facets of residential and commercial plumbing repairs, installations, and maintenance — done right the first time.</p>
-      <div class="cap-bg-num">02</div>
       <div class="cap-line"></div>
     </div>
     <div class="cap-card">
       <div class="cap-number">03</div>
-      <div class="cap-icon">🛁</div>
       <div class="cap-title">Bathroom Renovations</div>
       <p class="cap-desc">Complete bathroom plumbing fit-outs and renovations, from rough-in to final fixture installation.</p>
-      <div class="cap-bg-num">03</div>
       <div class="cap-line"></div>
     </div>
     <div class="cap-card">
       <div class="cap-number">04</div>
-      <div class="cap-icon">🔥</div>
       <div class="cap-title">Hot Water Systems</div>
       <p class="cap-desc">Supply, installation, and repair of all brands. Gas, electric, and solar — same-day replacements available.</p>
-      <div class="cap-bg-num">04</div>
       <div class="cap-line"></div>
     </div>
     <div class="cap-card">
       <div class="cap-number">05</div>
-      <div class="cap-icon">🔩</div>
       <div class="cap-title">Gas Fitting</div>
       <p class="cap-desc">Licensed gas fitting for appliances, BBQs, hot water systems, and new gas line installations.</p>
-      <div class="cap-bg-num">05</div>
       <div class="cap-line"></div>
     </div>
     <div class="cap-card">
       <div class="cap-number">06</div>
-      <div class="cap-icon">💧</div>
       <div class="cap-title">Leak Detection</div>
       <p class="cap-desc">Non-invasive leak detection to locate and fix leaks before they cause costly structural damage.</p>
-      <div class="cap-bg-num">06</div>
       <div class="cap-line"></div>
     </div>
     <div class="cap-card">
       <div class="cap-number">07</div>
-      <div class="cap-icon">🌊</div>
       <div class="cap-title">Drainage</div>
       <p class="cap-desc">Stormwater, sewer, and sub-surface drainage design, installation, and repair for all property types.</p>
-      <div class="cap-bg-num">07</div>
       <div class="cap-line"></div>
     </div>
     <div class="cap-card">
       <div class="cap-number">08</div>
-      <div class="cap-icon">🚨</div>
       <div class="cap-title">Emergency Plumbing</div>
       <p class="cap-desc">Burst pipes, major leaks, no hot water — we're available 24 hours a day, 7 days a week, every day of the year.</p>
-      <div class="cap-bg-num">08</div>
       <div class="cap-line"></div>
     </div>
   </div>
