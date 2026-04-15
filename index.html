@@ -928,6 +928,90 @@
     .footer-right { text-align: left; align-items: flex-start; }
     .footer-links { justify-content: flex-start; flex-wrap: wrap; gap: 1.25rem; }
     .emergency-bar { padding: 10px 1.5rem; gap: 0.75rem; flex-wrap: wrap; text-align: center; }
+    .faq-item { padding: 1.25rem 0; }
+    .faq-question { font-size: 1rem; padding-right: 2rem; }
+    .faq-answer ul { padding-left: 1rem; }
+  }
+
+  /* ── FAQ ── */
+  .faq-section { padding: var(--section-pad) 3rem; }
+  .faq-list {
+    max-width: 860px;
+    margin: 0 auto;
+    margin-top: 3.5rem;
+  }
+  .faq-item {
+    border-bottom: 1px solid var(--border);
+    padding: 1.5rem 0;
+  }
+  .faq-item:first-child { border-top: 1px solid var(--border); }
+  .faq-question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    cursor: pointer;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: var(--white);
+    list-style: none;
+    padding-right: 0.25rem;
+    user-select: none;
+  }
+  .faq-question::-webkit-details-marker { display: none; }
+  .faq-icon {
+    flex-shrink: 0;
+    width: 28px; height: 28px;
+    border: 1.5px solid #0D7A7A;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: #0D7A7A;
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1;
+    transition: transform 0.3s ease, background 0.2s ease;
+  }
+  .faq-item.is-open .faq-icon {
+    transform: rotate(45deg);
+    background: #0D7A7A;
+    color: var(--white);
+  }
+  .faq-body {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.35s ease, opacity 0.3s ease, padding 0.3s ease;
+    opacity: 0;
+    padding-top: 0;
+  }
+  .faq-item.is-open .faq-body {
+    max-height: 800px;
+    opacity: 1;
+    padding-top: 1rem;
+  }
+  .faq-body p, .faq-body li {
+    font-size: 0.95rem;
+    color: var(--grey-light);
+    line-height: 1.8;
+  }
+  .faq-body p + p { margin-top: 0.75rem; }
+  .faq-body ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 0.5rem;
+  }
+  .faq-body ul li {
+    padding-left: 1.25rem;
+    position: relative;
+    margin-bottom: 0.3rem;
+  }
+  .faq-body ul li::before {
+    content: '—';
+    position: absolute; left: 0;
+    color: #0D7A7A;
+    font-weight: 700;
   }
 </style>
 <script type="application/ld+json">
@@ -1223,6 +1307,87 @@
   </div>
 </section>
 
+<!-- FAQ -->
+<section class="faq-section section-alt" id="faq">
+  <div class="section-label">Got Questions</div>
+  <h2 class="section-title" style="text-align:center">Frequently Asked <span class="accent">Questions</span></h2>
+
+  <div class="faq-list">
+
+    <div class="faq-item">
+      <div class="faq-question">
+        Why is my split system leaking water?
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-body">
+        <p>Most of the time, it's caused by a blocked drain. When your system gets dirty — like blocked filters or a dusty coil — airflow is reduced and it can cause the system to produce water excessively. This can overflow the drain pan or block the drain, leading to leaks. Regular servicing helps prevent this. If you'd like your system maintained by RepAIR HVAC Services, don't hesitate to get in touch.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        What is a room temperature set point and what should I set mine to?
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-body">
+        <p>A room temperature set point is the temperature you'd like your system to achieve before it either cycles off or continues to fan without a refrigerating effect. We recommend keeping it between 21°C and 23°C for efficient operation. The further you set it from ambient temperature, the harder and longer your system has to work to get there.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        Should I repair or replace my air conditioner?
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-body">
+        <p>It depends on the age and condition of your system. If it's over 15 years old, parts can be hard to source, so replacement is often the better option. If you've already spent a lot on repairs, it may be more cost-effective to replace rather than keep fixing. RepAIR HVAC Services will always provide both repair and replacement options so you can make the right call.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        How often should I service my air conditioner — and what does a service include?
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-body">
+        <p>A good rule of thumb is once every 12 months, depending on how often you run the system. In between, you can clean your return air filter as needed — our technicians can show you how when we attend.</p>
+        <p>A general service by RepAIR HVAC Services includes:</p>
+        <ul>
+          <li>Test system operation on full load and ensure adequate airflow</li>
+          <li>Record temperatures to determine correct refrigerant levels</li>
+          <li>Chemically clean return air filters, coils, grilles and fascia covers (if applicable)</li>
+          <li>Inspect condition of all electrical components</li>
+          <li>Tighten power and interconnect electrical connections</li>
+          <li>Flush condensate drains</li>
+          <li>Test zone motor operation (if applicable)</li>
+        </ul>
+        <p>Regular maintenance extends system lifespan, improves energy efficiency and reduces the risk of breakdowns.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        Does RepAIR HVAC Services provide free installation quotes?
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-body">
+        <p>Yes. We're happy to attend site and gather all necessary details to provide a free quote. Any information you can provide upfront — such as floor plans — is encouraged. Free installation quotes are valid for one month.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        How much experience does RepAIR HVAC Services have? Are you licensed?
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-body">
+        <p>Our directors have a combined 18+ years of experience across residential and commercial HVAC. We are licensed with the RTA and Building Commission NSW, so we're equipped to handle whatever you throw at us.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <!-- CONTACT -->
 <section class="contact-section" id="contact">
   <div class="contact-grid">
@@ -1409,3 +1574,18 @@
       if (email)   lines.push('Email:   ' + email);
       if (service) lines.push('Service: ' + service);
       if (message) { lines.push(''); lines.push('Message:'); lines.push(messa
+<script>
+  (function() {
+    var items = document.querySelectorAll('.faq-item');
+    items.forEach(function(item) {
+      var question = item.querySelector('.faq-question');
+      question.addEventListener('click', function() {
+        var isOpen = item.classList.contains('is-open');
+        items.forEach(function(i) { i.classList.remove('is-open'); });
+        if (!isOpen) { item.classList.add('is-open'); }
+      });
+    });
+  })();
+</script>
+</body>
+</html>
