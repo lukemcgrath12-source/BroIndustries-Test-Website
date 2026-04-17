@@ -879,29 +879,6 @@
   /* ── DIVIDER ── */
   .divider { height: 1px; background: var(--border); }
 
-  /* ── EMERGENCY STICKY BAR ── */
-  .emergency-bar {
-    position: fixed; bottom: 0; left: 0; right: 0; z-index: 200;
-    background: var(--orange);
-    padding: 10px 3rem;
-    display: flex; align-items: center; justify-content: center; gap: 1.5rem;
-  }
-  .emergency-bar-text {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.75rem; font-weight: 800;
-    letter-spacing: 0.2em; text-transform: uppercase;
-    color: var(--black);
-  }
-  .emergency-bar a {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 1rem; font-weight: 900;
-    letter-spacing: 0.05em;
-    color: var(--black);
-    border-bottom: 2px solid rgba(0,0,0,0.25);
-    transition: border-color 0.2s ease;
-  }
-  .emergency-bar a:hover { border-color: var(--black); }
-  .emergency-bar a:focus-visible { outline: 2px solid var(--black); outline-offset: 4px; }
 
   /* ── RESPONSIVE ── */
   @media (max-width: 1100px) {
@@ -933,7 +910,6 @@
     footer { grid-template-columns: 1fr; gap: 1.5rem; }
     .footer-right { text-align: left; align-items: flex-start; }
     .footer-links { justify-content: flex-start; flex-wrap: wrap; gap: 1.25rem; }
-    .emergency-bar { padding: 10px 1.5rem; gap: 0.75rem; flex-wrap: wrap; text-align: center; }
     .fullbleed { min-height: auto; }
     .fullbleed-overlay { padding: 4rem 1.5rem; }
     .fullbleed-dots { display: none; }
@@ -1366,11 +1342,6 @@
   </div>
 </footer>
 
-<!-- EMERGENCY STICKY BAR -->
-<div class="emergency-bar">
-  <span class="emergency-bar-text">⚡ 24/7 Emergency Plumbing —</span>
-  <a href="tel:0429967151">Call 0429 967 151 Now</a>
-</div>
 
 <script>
   function scrollCarousel(dir) {
