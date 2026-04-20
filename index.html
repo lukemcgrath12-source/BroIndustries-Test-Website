@@ -1352,7 +1352,7 @@
   }
 </script>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
   (function() {
     var form = document.getElementById('quote-form');
     var btn  = document.getElementById('form-btn');
@@ -1384,14 +1384,47 @@
       }
       document.getElementById('f-email').setCustomValidity('');
 
-      var lines = [
-        'New Quote Request — BRO Industries',
-        '',
-        'Name:    ' + name,
-        'Phone:   ' + phone
-      ];
-      if (email)   lines.push('Email:   ' + email);
-      if (service) lines.push('Service: ' + service);
-      if (message) { lines.push(''); lines.push('Message:'); lines.push(messa
+      btn.disabled = true;
+      btn.textContent = 'Sending…';
+
+      var body = 'Name: ' + name + '\nPhone: ' + phone;
+      if (email)   body += '\nEmail: ' + email;
+      if (service) body += '\nService: ' + service;
+      if (message) body += '\n\nMessage:\n' + message;
+
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          access_key: '5d28b0d0-2c25-4914-92f7-48d997c50f84',
+          subject: 'New Quote Request — BRO Industries',
+          from_name: name,
+          replyto: email || '',
+          message: body
+        })
+      })
+      .then(function(res) { return res.json(); })
+      .then(function(data) {
+        if (data.success) {
+          form.reset();
+          ok.style.display = 'block';
+          btn.style.display = 'none';
+          if (typeof gtag === 'function') {
+            gtag('event', 'generate_lead', { send_to: 'G-Q0RG67DPN6' });
+          }
+        } else {
+          btn.disabled = false;
+          btn.textContent = 'Send Enquiry';
+          alert('Something went wrong. Please try again or call us directly.');
+        }
+      })
+      .catch(function() {
+        btn.disabled = false;
+        btn.textContent = 'Send Enquiry';
+        alert('Something went wrong. Please try again or call us directly.');
+      });
+    });
+  })();
+</script>
 </body>
 </html>
