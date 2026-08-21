@@ -148,7 +148,19 @@
     border-top: 1px solid var(--border);
     padding: 2rem 3rem;
     display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 1rem;
   }
+  .footer-credit {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.65rem; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--grey);
+  }
+  .footer-credit a {
+    text-decoration: underline; text-underline-offset: 3px;
+    transition: color 0.2s ease;
+  }
+  .footer-credit a:hover { color: var(--orange); }
   .footer-logo {
     font-family: 'Barlow Condensed', sans-serif;
     font-size: 1.1rem; font-weight: 900;
@@ -266,6 +278,7 @@
 
 <footer>
   <div class="footer-logo"><span>BRO</span> Industries</div>
+  <div class="footer-credit">Website by <a href="https://www.latitudemarketing.au/" target="_blank" rel="noopener">Latitude Marketing</a></div>
   <a href="/" class="footer-back">← Back to home</a>
 </footer>
 
