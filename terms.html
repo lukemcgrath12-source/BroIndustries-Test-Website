@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms of Use | BRO Industries</title>
+<meta name="description" content="The terms that apply when you use the BRO Industries website.">
+<link rel="canonical" href="https://broindustries.com.au/terms">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --orange:     #E8761A;
+    --orange-lt:  #F08030;
+    --black:      #0A0A0A;
+    --dark:       #111111;
+    --dark-2:     #1A1A1A;
+    --dark-3:     #222222;
+    --white:      #FFFFFF;
+    --grey:       #888888;
+    --grey-light: #CCCCCC;
+    --border:     #2A2A2A;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; border: 0; }
+  html { scroll-behavior: smooth; line-height: 1.5; -webkit-text-size-adjust: 100%; }
+
+  body {
+    background: var(--dark);
+    color: var(--white);
+    font-family: 'Barlow', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 3rem; height: 72px;
+    background: rgba(10,10,10,0.93);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(232,118,26,0.18);
+  }
+  nav::before {
+    content: ''; position: absolute;
+    top: 0; left: 0; right: 0; height: 3px;
+    background: var(--orange);
+  }
+  .nav-logo {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.25rem; font-weight: 900;
+    letter-spacing: -0.01em; text-transform: uppercase;
+    color: var(--white);
+  }
+  .nav-logo span { color: var(--orange); }
+  .nav-logo small {
+    display: block; font-size: 0.6rem; font-weight: 600;
+    letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--grey); margin-top: 2px;
+  }
+  .nav-cta {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.7rem; font-weight: 800;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--black); background: var(--orange);
+    padding: 0.6rem 1.5rem;
+    transition: background 0.2s ease;
+    display: inline-block;
+  }
+  .nav-cta:hover { background: var(--orange-lt); }
+
+  /* PAGE */
+  .page {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 140px 3rem 8rem;
+  }
+
+  .page-eyebrow {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.65rem; font-weight: 700;
+    letter-spacing: 0.45em; text-transform: uppercase;
+    color: var(--orange); margin-bottom: 1rem;
+    display: flex; align-items: center; gap: 0.75rem;
+  }
+  .page-eyebrow::before {
+    content: ''; width: 28px; height: 1px;
+    background: var(--orange); opacity: 0.6;
+  }
+
+  .page-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 900; line-height: 0.9;
+    letter-spacing: -0.01em; text-transform: uppercase;
+    color: var(--white); margin-bottom: 0.75rem;
+  }
+  .page-title .accent { color: var(--orange); }
+
+  .page-date {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.65rem; font-weight: 700;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--grey); margin-bottom: 3.5rem;
+  }
+
+  .divider { height: 1px; background: var(--border); margin-bottom: 3.5rem; }
+
+  .section { margin-bottom: 3rem; }
+
+  h2 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.25rem; font-weight: 800;
+    text-transform: uppercase; letter-spacing: 0.04em;
+    color: var(--white); margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  p {
+    font-size: 0.95rem; color: var(--grey-light);
+    line-height: 1.85; margin-bottom: 1rem;
+  }
+
+  ul {
+    margin: 0.5rem 0 1rem 1.5rem;
+  }
+  ul li {
+    font-size: 0.95rem; color: var(--grey-light);
+    line-height: 1.85; margin-bottom: 0.35rem;
+  }
+
+  .contact-block {
+    background: var(--dark-2);
+    border-left: 3px solid var(--orange);
+    padding: 1.5rem 1.75rem;
+    margin-top: 1rem;
+  }
+  .contact-block p { margin-bottom: 0.35rem; }
+  .contact-block a { color: var(--orange); }
+
+  /* FOOTER */
+  footer {
+    background: var(--black);
+    border-top: 1px solid var(--border);
+    padding: 2rem 3rem;
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 1rem;
+  }
+  .footer-credit {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.65rem; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--grey);
+  }
+  .footer-credit a {
+    text-decoration: underline; text-underline-offset: 3px;
+    transition: color 0.2s ease;
+  }
+  .footer-credit a:hover { color: var(--orange); }
+  .footer-logo {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.1rem; font-weight: 900;
+    text-transform: uppercase; color: var(--white);
+  }
+  .footer-logo span { color: var(--orange); }
+  .footer-back {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.65rem; font-weight: 700;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--grey); transition: color 0.2s ease;
+  }
+  .footer-back:hover { color: var(--orange); }
+
+  @media (max-width: 768px) {
+    nav { padding: 0 1.5rem; }
+    .page { padding: 120px 1.5rem 5rem; }
+    footer { padding: 2rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/">
+    <div class="nav-logo">
+      <span>BRO</span> Industries
+      <small>Licensed Plumbing · Sydney</small>
+    </div>
+  </a>
+  <a href="tel:0429967151" class="nav-cta">0429 967 151</a>
+</nav>
+
+<div class="page">
+
+  <div class="page-eyebrow">Legal</div>
+  <h1 class="page-title">Terms of <span class="accent">Use</span></h1>
+  <div class="page-date">Effective date: 5 November 2026</div>
+  <div class="divider"></div>
+
+  <div class="section">
+    <h2>About these terms</h2>
+    <p>These terms cover your use of broindustries.com.au, the website of BRO Industries Pty Ltd (ABN 69 613 074 490) ("BRO Industries", "we", "us"). By using this website you agree to them. If you don't agree, please don't use the site.</p>
+  </div>
+
+  <div class="section">
+    <h2>Using this website</h2>
+    <p>You can browse this website and use it to contact us about our services. Please don't use it for anything unlawful, try to interfere with how it works, or send us anything misleading, offensive or harmful through the enquiry form.</p>
+  </div>
+
+  <div class="section">
+    <h2>Information on this site</h2>
+    <p>We keep the information on this website accurate and up to date as best we can, but it is general information about our plumbing services only. It isn't advice for your situation and may change without notice. Photos show examples of our work and finished results can vary from job to job.</p>
+  </div>
+
+  <div class="section">
+    <h2>Quotes and work</h2>
+    <p>Sending an enquiry through this website doesn't create a contract or a booking. Any quote, price or timeframe we give you is confirmed in writing, and any work we do for you is covered by that quote or agreement, not by these website terms.</p>
+  </div>
+
+  <div class="section">
+    <h2>Australian Consumer Law</h2>
+    <p>Nothing in these terms excludes, restricts or changes any rights you have under the Australian Consumer Law or any other law that can't be excluded.</p>
+  </div>
+
+  <div class="section">
+    <h2>Our content</h2>
+    <p>The text, photos, logos and design on this website belong to BRO Industries or are used with permission. Please don't copy or reuse them without asking us first.</p>
+  </div>
+
+  <div class="section">
+    <h2>Links to other websites</h2>
+    <p>This website may link to other sites, such as social media, maps and review platforms. We don't control those sites and aren't responsible for their content or how they handle your information.</p>
+  </div>
+
+  <div class="section">
+    <h2>Liability</h2>
+    <p>To the extent the law allows, we aren't liable for any loss or damage that comes from using this website or relying on its content, or from the site being unavailable. Where our liability can't be excluded but can be limited, it is limited to supplying the relevant information again.</p>
+  </div>
+
+  <div class="section">
+    <h2>Your privacy</h2>
+    <p>How we collect and handle your personal information is explained in our <a href="/privacy">privacy policy</a>.</p>
+  </div>
+
+  <div class="section">
+    <h2>Changes to these terms</h2>
+    <p>We may update these terms from time to time. The current version is always on this page, with the date it was last updated.</p>
+  </div>
+
+  <div class="section">
+    <h2>Governing law</h2>
+    <p>These terms are governed by the laws of New South Wales, Australia, and you agree to the jurisdiction of its courts.</p>
+  </div>
+
+  <div class="section">
+    <h2>Questions</h2>
+    <p>If you have a question about these terms, call <a href="tel:0429967151">0429 967 151</a> or email <a href="mailto:jack@broindustries.com.au">jack@broindustries.com.au</a>.</p>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-logo"><span>BRO</span> Industries</div>
+  <div class="footer-credit">Website by <a href="https://www.latitudemarketing.au/" target="_blank" rel="noopener">Latitude Marketing</a></div>
+  <a href="/" class="footer-back">← Back to home</a>
+</footer>
+
+  <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+  <script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>
