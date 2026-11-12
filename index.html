@@ -651,10 +651,10 @@
   .team-photo { aspect-ratio: 3/4; overflow: hidden; position: relative; }
   .team-photo img {
     width: 100%; height: 100%; object-fit: cover;
-    filter: grayscale(60%) brightness(0.65);
+    filter: none;
     transition: filter 0.4s ease, transform 0.4s ease;
   }
-  .team-card:hover .team-photo img { filter: grayscale(20%) brightness(0.8); transform: scale(1.05); }
+  .team-card:hover .team-photo img { transform: scale(1.04); }
 
   /* orange overlay on hover */
   .team-photo::after {
@@ -917,6 +917,23 @@
     .fullbleed-title br { display: none; }
   }
 
+
+  /* google badge as link */
+  a.google-badge { text-decoration: none; color: inherit; transition: border-color .25s ease, transform .25s ease; }
+  a.google-badge:hover { border-color: var(--orange); transform: translateY(-2px); }
+  a.google-badge:focus-visible { outline: 2px solid var(--orange); outline-offset: 4px; }
+  /* mobile sticky call bar */
+  .mbar { display: none; }
+  @media (max-width: 480px) { .cta-num { display: none; } }
+  @media (max-width: 768px) {
+    .mbar { display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 90; gap: 10px; padding: 10px 12px calc(10px + env(safe-area-inset-bottom)); background: rgba(17,17,17,.96); border-top: 1px solid var(--border); backdrop-filter: blur(10px); }
+    .mbar a { flex: 1; display: flex; align-items: center; justify-content: center; min-height: 50px; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 1.05rem; letter-spacing: .08em; text-transform: uppercase; text-decoration: none; }
+    .mbar .mbar-call { background: var(--orange); color: #111; }
+    .mbar .mbar-quote { border: 1px solid var(--border); color: var(--white); }
+    .mbar a:active { transform: scale(.98); }
+    .mbar a:focus-visible { outline: 2px solid var(--white); outline-offset: 2px; }
+    body { padding-bottom: 72px; }
+  }
 </style>
 <script type="application/ld+json">
 {
@@ -980,8 +997,8 @@
     <h1 class="hero-title">Need a<br><span class="accent">Plumber?</span></h1>
     <p class="hero-sub">Licensed plumbing across Sydney and Greater Western Sydney. Delivered with honesty, integrity, and 55+ years of combined expertise.</p>
     <div class="hero-cta-row">
-      <a href="#contact" class="btn-primary">Request a Quote</a>
-      <a href="#capabilities" class="btn-outline">Our Services</a>
+      <a href="tel:0429967151" class="btn-primary" data-call="hero">Call Jack<span class="cta-num"> 0429 967 151</span></a>
+      <a href="#contact" class="btn-outline">Request a Quote</a>
     </div>
     <div class="hero-trust-row">
       <span class="trust-pill">Licensed &amp; Insured</span>
@@ -1018,7 +1035,7 @@
     <div class="contact-left">
       <div class="section-label">Get in Touch</div>
       <h2 class="section-title" style="margin-bottom:1.5rem">Let's Talk<br><span class="accent">Plumbing</span></h2>
-      <p class="contact-body">Call us for the fastest response — or send an enquiry and we'll get back to you within the hour. All quotes are free with no obligation. We service Sydney and all of greater western Sydney.</p>
+      <p class="contact-body">Call us for the fastest response, or send an enquiry and we'll get back to you within the hour. All quotes are free with no obligation. We service Sydney and all of greater western Sydney.</p>
       <div class="contact-items">
         <a href="tel:0429967151" class="contact-item contact-item--primary">
           <div class="contact-icon">📞</div>
@@ -1067,7 +1084,7 @@
 
     <div class="contact-right">
       <div class="form-title">Request a <span class="accent">Quote</span></div>
-      <p class="form-sub">Free, no obligation — we'll get back to you within the hour.</p>
+      <p class="form-sub">Free, no obligation. We'll get back to you within the hour.</p>
       <form class="form" id="quote-form">
         <div class="form-row">
           <div class="form-field">
@@ -1122,7 +1139,7 @@
       <h2 class="section-title">Comprehensive<br>Plumbing <span class="accent">Capabilities</span></h2>
     </div>
     <p class="section-lead">
-      From emergency call-outs to full bathroom renovations — we carry out all facets of plumbing with the precision and care of a family business that stands behind every job.
+      From emergency call-outs to full bathroom renovations, we carry out all facets of plumbing with the precision and care of a family business that stands behind every job.
     </p>
   </div>
 
@@ -1136,7 +1153,7 @@
     <div class="cap-card">
       <div class="cap-number">02</div>
       <div class="cap-title">General Plumbing</div>
-      <p class="cap-desc">All facets of residential and commercial plumbing repairs, installations, and maintenance — done right the first time.</p>
+      <p class="cap-desc">All facets of residential and commercial plumbing repairs, installations, and maintenance, done right the first time.</p>
       <div class="cap-line"></div>
     </div>
     <div class="cap-card">
@@ -1148,7 +1165,7 @@
     <div class="cap-card">
       <div class="cap-number">04</div>
       <div class="cap-title">Hot Water Systems</div>
-      <p class="cap-desc">Supply, installation, and repair of all brands. Gas, electric, and solar — same-day replacements available.</p>
+      <p class="cap-desc">Supply, installation, and repair of all brands. Gas, electric, and solar, with same-day replacements available.</p>
       <div class="cap-line"></div>
     </div>
     <div class="cap-card">
@@ -1172,7 +1189,7 @@
     <div class="cap-card">
       <div class="cap-number">08</div>
       <div class="cap-title">Emergency Plumbing</div>
-      <p class="cap-desc">Burst pipes, major leaks, no hot water — we're available 24 hours a day, 7 days a week, every day of the year.</p>
+      <p class="cap-desc">Burst pipes, major leaks, no hot water? We're available 24 hours a day, 7 days a week, every day of the year.</p>
       <div class="cap-line"></div>
     </div>
   </div>
@@ -1252,14 +1269,14 @@
       <div class="section-label">Client Testimonials</div>
       <h2 class="section-title">Google <span class="accent">Reviews</span></h2>
     </div>
-    <div class="google-badge">
+    <a class="google-badge" href="https://www.google.com/search?q=BRO+Industries+plumbing+reviews" target="_blank" rel="noopener" aria-label="Read our Google reviews">
       <span class="google-g">G</span>
       <div>
         <div class="google-stars">★ ★ ★ ★ ★</div>
-        <div class="google-badge-label">5.0 · Hundreds of Reviews</div>
+        <div class="google-badge-label">5.0 · Read our reviews</div>
       </div>
       <div class="google-badge-score">5.0</div>
-    </div>
+    </a>
   </div>
 
   <div class="reviews-grid">
@@ -1423,5 +1440,12 @@
 </script>
   <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
   <script defer src="/_vercel/insights/script.js"></script>
+<div class="mbar" role="navigation" aria-label="Quick contact">
+  <a href="tel:0429967151" class="mbar-call" data-call="mbar">Call Jack</a>
+  <a href="#contact" class="mbar-quote">Get a quote</a>
+</div>
+<script>
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href^="tel:"]');if(a&&typeof gtag==='function'){gtag('event','phone_call',{send_to:'G-Q0RG67DPN6',link_location:a.getAttribute('data-call')||'contact'});}});
+</script>
 </body>
 </html>
