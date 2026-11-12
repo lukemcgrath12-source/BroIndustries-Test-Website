@@ -1092,6 +1092,51 @@
     .hero-photo { display: none; }
     .hero-content { padding: 3.5rem 1.5rem 3rem; }
   }
+
+  /* ══ HERO v3 ══ */
+  .hero { grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 3rem; padding: 72px max(3rem, calc((100vw - 1200px)/2)) 0; }
+  .hero-content { padding: 5rem 0 5rem; }
+  .hero-title { font-size: clamp(3.2rem, 5.6vw, 5.8rem); line-height: .9; letter-spacing: -.02em; margin-bottom: 1.4rem; text-wrap: balance; }
+  .hero-sub { max-width: 31rem; margin-bottom: 2rem; color: var(--grey-light); }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: .75rem; }
+  .hero-btn { display: inline-flex; align-items: center; gap: .6rem; min-height: 58px; padding: 0 1.4rem; border-radius: 6px; font-weight: 600; font-size: 1.05rem; transition: transform .18s cubic-bezier(.2,.8,.2,1), background .18s ease, border-color .18s ease; }
+  .hero-btn:active { transform: translateY(1px); }
+  .hero-btn:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
+  .hero-btn--call { background: var(--orange); color: #17120C; box-shadow: 0 14px 30px -14px rgba(232,118,26,.7); }
+  .hero-btn--call:hover { background: var(--orange-lt); transform: translateY(-2px); }
+  .hero-btn--call svg { width: 20px; height: 20px; fill: currentColor; flex: none; }
+  .hero-btn--call b { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 1.35rem; letter-spacing: .01em; margin-left: .2rem; }
+  .hero-btn--quote { border: 1.5px solid rgba(255,255,255,.35); color: #fff; }
+  .hero-btn--quote:hover { border-color: #fff; transform: translateY(-2px); }
+  .call-alt { margin-top: 1rem; font-size: .95rem; }
+  .hero-rating { display: inline-flex; align-items: center; gap: .55rem; margin-top: 2.2rem; color: var(--grey-light); font-size: .95rem; }
+  .hero-rating:hover { color: #fff; }
+  .hero-rating:focus-visible { outline: 2px solid var(--orange); outline-offset: 3px; }
+  .hero-stars { color: #F5B729; letter-spacing: .08em; }
+  .hero-rating-sep { width: 4px; height: 4px; border-radius: 50%; background: var(--grey); }
+  .hero-ticks, .call-plate { display: none; }
+  .hero-rating { flex-wrap: wrap; } .hero-rating .nw { white-space: nowrap; }
+  .hero-media { grid-column: 2; grid-row: 1; position: relative; align-self: center; height: min(72vh, 600px); margin: 3rem 0; }
+  .hm-main { position: absolute; top: 0; right: 0; width: 88%; height: 74%; margin: 0; border-radius: 10px; overflow: hidden; box-shadow: 0 30px 60px -30px rgba(0,0,0,.7); }
+  .hm-main img { width: 100%; height: 100%; object-fit: cover; object-position: 30% 60%; }
+  .hm-main figcaption { position: absolute; left: 1rem; top: 1rem; background: rgba(20,28,36,.75); backdrop-filter: blur(6px); color: #fff; font-size: .82rem; padding: .35rem .65rem; border-radius: 4px; }
+  .hm-second { position: absolute; left: 0; bottom: 0; width: 40%; height: 52%; margin: 0; border-radius: 10px; overflow: hidden; border: 6px solid var(--black); box-shadow: 0 24px 50px -24px rgba(0,0,0,.8); }
+  .hm-second img { width: 100%; height: 100%; object-fit: cover; }
+  .hm-chip { position: absolute; right: 4%; bottom: 6%; display: flex; align-items: center; gap: .75rem; background: #fff; color: var(--ink); padding: .6rem 1rem .6rem .6rem; border-radius: 999px; box-shadow: 0 18px 40px -18px rgba(0,0,0,.7); }
+  .hm-chip img { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; }
+  .hm-chip strong { display: block; font-size: .95rem; line-height: 1.1; }
+  .hm-chip span { font-size: .8rem; color: #4A5864; }
+  .hero-photo { display: none; }
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; gap: 0; padding: 64px 1.5rem 0; }
+    .hero-content { padding: 3rem 0 2rem; }
+    .hero-actions { flex-direction: column; }
+    .hero-btn { justify-content: center; }
+    .hero-media { grid-column: 1; grid-row: 2; height: 300px; margin: 0 0 2.5rem; }
+    .hm-second { display: none; }
+    .hm-main { width: 100%; height: 100%; }
+  }
+  @media (prefers-reduced-motion: reduce) { .hero-btn { transition: none; } }
 </style>
 <script type="application/ld+json">
 {
@@ -1148,21 +1193,23 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-overlay"></div>
-  <figure class="hero-photo"><img src="images/jack-hero.jpg" alt="Jack McGrath, owner and licensed plumber at BRO Industries" fetchpriority="high"><figcaption>Jack McGrath, owner and licensed plumber</figcaption></figure>
   <div class="hero-content">
-    <h1 class="hero-title">Need a<br>plumber?</h1>
-    <p class="hero-sub">Licensed plumbing across Sydney and Greater Western Sydney. Delivered with honesty, integrity, and 55+ years of combined expertise.</p>
-    <a href="tel:0429967151" class="call-plate" data-call="hero">
-      <span class="call-plate-label">Call or text Jack</span>
-      <span class="call-plate-num">0429 967 151</span>
-    </a>
-    <p class="call-alt">Or call John on <a href="tel:0429523253" data-call="hero-john">0429 523 253</a>, or <a href="#contact">request a quote</a>.</p>
-    <ul class="hero-ticks">
-      <li>Licensed and insured</li>
-      <li>Family operated</li>
-      <li>Same day availability</li>
-      <li>24/7 emergencies</li>
-    </ul>
+    <h1 class="hero-title">Burst pipe?<br>Blocked drain?<br>Call Jack.</h1>
+    <p class="hero-sub">Licensed, family-run plumbers across Sydney and Greater Western Sydney. Free quotes, same day availability, and 24/7 for emergencies.</p>
+    <div class="hero-actions">
+      <a href="tel:0429967151" class="hero-btn hero-btn--call" data-call="hero">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+        <span>Call Jack <b>0429 967 151</b></span>
+      </a>
+      <a href="#contact" class="hero-btn hero-btn--quote">Get a free quote</a>
+    </div>
+    <p class="call-alt">Prefer John? Call <a href="tel:0429523253" data-call="hero-john">0429 523 253</a>.</p>
+    <a class="hero-rating" href="#reviews"><span class="hero-stars" aria-hidden="true">★★★★★</span><span class="nw">5.0 on Google</span><span class="hero-rating-sep" aria-hidden="true"></span><span class="nw">Licensed and insured</span></a>
+  </div>
+  <div class="hero-media">
+    <figure class="hm-main"><img src="images/hero-harbour.jpg" alt="BRO Industries commercial plumbing job at Barangaroo, Sydney Harbour" fetchpriority="high"><figcaption>Marina development, Barangaroo</figcaption></figure>
+    <figure class="hm-second"><img src="images/hero-shower.jpg" alt="Shower fixture fit-off in a Sydney bathroom renovation" loading="lazy"></figure>
+    <div class="hm-chip"><img src="images/jack-chip.jpg" alt=""><div><strong>Jack McGrath</strong><span>Owner, licensed plumber</span></div></div>
   </div>
 </section>
 
