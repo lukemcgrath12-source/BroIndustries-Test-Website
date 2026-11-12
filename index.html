@@ -545,25 +545,27 @@
       btn.disabled = true;
       btn.textContent = 'Sending…';
 
-      var body = 'Name: ' + name + '\nPhone: ' + phone;
-      if (email)   body += '\nEmail: ' + email;
-      if (service) body += '\nService: ' + service;
-      if (message) body += '\n\nMessage:\n' + message;
+      var payload = {
+        _subject: 'New quote request from ' + name + ' (website)',
+        _cc: 'john@broindustries.com.au',
+        _template: 'table',
+        _captcha: 'false',
+        Name: name,
+        Phone: phone,
+        Email: email || 'Not provided',
+        Service: service || 'Not selected',
+        Message: message || 'No message'
+      };
+      if (email) payload._replyto = email;
 
-      fetch('https://api.web3forms.com/submit', {
+      fetch('https://formsubmit.co/ajax/jack@broindustries.com.au', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify({
-          access_key: '5d28b0d0-2c25-4914-92f7-48d997c50f84',
-          subject: 'New Quote Request — BRO Industries',
-          from_name: name,
-          replyto: email || '',
-          message: body
-        })
+        body: JSON.stringify(payload)
       })
       .then(function(res) { return res.json(); })
       .then(function(data) {
-        if (data.success) {
+        if (data.success === true || data.success === 'true') {
           form.reset();
           ok.style.display = 'block';
           btn.style.display = 'none';
