@@ -570,7 +570,7 @@
           ok.style.display = 'block';
           btn.style.display = 'none';
           if (typeof gtag === 'function') {
-            gtag('event', 'generate_lead', { send_to: 'G-Q0RG67DPN6' });
+            gtag('event', 'generate_lead', { send_to: 'G-Q0RG67DPN6', form_name: 'quote_form', service: service || 'not_selected' });
           }
         } else {
           btn.disabled = false;
@@ -588,6 +588,7 @@
 </script>
 <script>
 document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href^="tel:"]');if(a&&typeof gtag==='function'){gtag('event','phone_call',{send_to:'G-Q0RG67DPN6',link_location:a.getAttribute('data-call')||'contact'});}});
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href^="mailto:"]');if(a&&typeof gtag==='function'){gtag('event','email_click',{send_to:'G-Q0RG67DPN6',email_to:a.getAttribute('href').replace('mailto:','')});}});
 </script>
 <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
 <script defer src="/_vercel/insights/script.js"></script>
