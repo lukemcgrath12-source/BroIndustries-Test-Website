@@ -224,6 +224,10 @@
     .mbar { display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 120; gap: .5rem; padding: .6rem .75rem calc(.6rem + env(safe-area-inset-bottom)); background: #fff; border-top: 1px solid var(--rule); }
     .mbar .btn { flex: 1; min-height: 52px; padding: 0 .5rem; gap: .45rem; letter-spacing: .1em; }
     .mbar .btn svg { width: 15px; height: 15px; fill: currentColor; }
+    .mbar .btn-call { background: var(--ink); color: #fff; }
+    .mbar .btn-call:hover, .mbar .btn-call:active { background: #000; }
+    .mbar .btn-call svg { fill: var(--orange); }
+    .mbar .btn-call .rp { background: rgba(230,108,15,.4); }
   }
   @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn { transition: none; } }
 
