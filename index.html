@@ -30,15 +30,15 @@
     --orange:      #E8761A;
     --orange-lt:   #F08030;
     --orange-dk:   #C45E0A;
-    --black:       #0A0A0A;
-    --dark:        #111111;
-    --dark-2:      #1A1A1A;
-    --dark-3:      #222222;
+    --black:       #141C24;
+    --dark:        #1A242E;
+    --dark-2:      #212D38;
+    --dark-3:      #2A3744;
     --white:       #FFFFFF;
     --off-white:   #F5F5F5;
-    --grey:        #888888;
-    --grey-light:  #CCCCCC;
-    --border:      #2A2A2A;
+    --grey:        #9AA8B4;
+    --grey-light:  #D3DBE1;
+    --border:      #2F3C49;
     --section-pad: 8rem;
   }
 
@@ -934,6 +934,83 @@
     .mbar a:focus-visible { outline: 2px solid var(--white); outline-offset: 2px; }
     body { padding-bottom: 72px; }
   }
+
+  /* ══ DESIGN PASS: bluestone + safety orange ══ */
+  :root { --concrete: #E8ECEE; --concrete-2: #DCE2E6; --ink: #17212B; --copper: #A84E14; }
+  .section-label, .fullbleed-label, .hero-scroll { display: none !important; }
+  .section-title { text-transform: none; letter-spacing: -0.01em; line-height: 0.95; }
+  .section-title .accent { color: inherit; }
+
+  /* hero: left-aligned, phone number is the headline act */
+  .hero { align-items: flex-start; justify-content: flex-end; background: var(--black); }
+  .hero-overlay { background: linear-gradient(90deg, rgba(20,28,36,.92) 0%, rgba(20,28,36,.72) 45%, rgba(20,28,36,.35) 100%); }
+  .hero-content { text-align: left; max-width: 1200px; width: 100%; margin: 0 auto; padding: 0 3rem 6.5rem; }
+  .hero-title { font-size: clamp(4.2rem, 11vw, 10rem); text-transform: none; letter-spacing: -0.03em; line-height: .86; margin-bottom: 1.5rem; }
+  .hero-sub { text-align: left; margin: 0 0 2.25rem; max-width: 34rem; font-size: clamp(1rem, 1.4vw, 1.15rem); }
+  .call-plate { display: inline-flex; flex-direction: column; gap: .15rem; background: var(--orange); color: #17120C; padding: 1rem 1.6rem 1.05rem; border-radius: 6px; box-shadow: 0 18px 40px -12px rgba(232,118,26,.55); transition: transform .2s cubic-bezier(.2,.8,.2,1), background .2s ease; }
+  .call-plate:hover { background: var(--orange-lt); transform: translateY(-2px); }
+  .call-plate:active { transform: translateY(0); }
+  .call-plate:focus-visible { outline: 3px solid #fff; outline-offset: 4px; }
+  .call-plate-label { font-weight: 600; font-size: .95rem; }
+  .call-plate-num { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: clamp(2.4rem, 5vw, 3.6rem); line-height: 1; letter-spacing: .01em; }
+  .call-alt { margin-top: 1.1rem; color: var(--grey-light); font-size: 1rem; }
+  .call-alt a { color: #fff; text-decoration: underline; text-decoration-color: var(--orange); text-underline-offset: 3px; }
+  .call-alt a:hover { color: var(--orange-lt); }
+  .call-alt a:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
+  .hero-ticks { list-style: none; display: flex; flex-wrap: wrap; gap: .5rem 1.75rem; margin-top: 2.25rem; color: var(--grey-light); font-size: .95rem; }
+  .hero-ticks li { display: flex; align-items: center; gap: .5rem; }
+  .hero-ticks li::before { content: ''; width: 16px; height: 16px; flex: none; background: var(--orange); -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M6.2 11.6 2.6 8l1.1-1.1 2.5 2.5 6.1-6.1L13.4 4.4z'/%3E%3C/svg%3E") center/contain no-repeat; mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M6.2 11.6 2.6 8l1.1-1.1 2.5 2.5 6.1-6.1L13.4 4.4z'/%3E%3C/svg%3E") center/contain no-repeat; }
+
+  /* stats: quieter strip */
+  .stats-bar { background: var(--dark-2); }
+  .stat-number .accent { color: var(--orange); }
+
+  /* services on concrete: an honest list, not numbered cards */
+  #capabilities { background: var(--concrete); color: var(--ink); }
+  #capabilities .section-title { color: var(--ink); }
+  #capabilities .section-lead { color: #3E4C58; }
+  #capabilities .capabilities-grid { grid-template-columns: 1fr 1fr; gap: 0 4rem; background: none; border-top: 2px solid var(--ink); }
+  #capabilities .cap-card { background: none; padding: 1.6rem 0; border-left: 0; border-bottom: 1px solid #C3CCD3; transform: none !important; display: grid; grid-template-columns: 15rem 1fr; gap: 1.5rem; align-items: baseline; }
+  #capabilities .cap-card:hover { background: none; }
+  #capabilities .cap-number, #capabilities .cap-line { display: none; }
+  #capabilities .cap-title { color: var(--ink); font-size: 1.6rem; text-transform: none; letter-spacing: 0; margin: 0; }
+  #capabilities .cap-desc { color: #3E4C58; font-size: .95rem; }
+  .divider { display: none; }
+
+  /* reviews on concrete */
+  #reviews { background: var(--concrete-2); color: var(--ink); }
+  #reviews .section-title { color: var(--ink); }
+  #reviews .google-badge { background: #fff; border-color: #C3CCD3; color: var(--ink); }
+  #reviews .google-badge-label { color: #3E4C58; }
+  #reviews .google-badge-score { color: var(--ink); }
+  #reviews .reviews-grid { background: none; gap: 1.25rem; }
+  #reviews .review-card { background: #fff; border: 0; border-radius: 8px; box-shadow: 0 1px 0 #C3CCD3, 0 14px 30px -18px rgba(23,33,43,.35); }
+  #reviews .review-stars { color: #E39A12; }
+  #reviews .review-text { color: var(--ink); font-size: 1.05rem; font-style: normal; }
+  #reviews .review-name { color: var(--ink); }
+  #reviews .review-loc { color: #5B6873; }
+
+  /* team: people first */
+  .team-grid { gap: 1.5rem; }
+  .team-card { border-radius: 8px; }
+  .team-photo::after { display: none; }
+  .team-name { text-transform: none; letter-spacing: 0; font-size: 1.6rem; }
+
+  /* banner */
+  .fullbleed-title { text-transform: none; letter-spacing: -0.02em; }
+  .fullbleed-dots { display: none; }
+
+  @media (max-width: 900px) {
+    #capabilities .capabilities-header { gap: 1rem; margin-bottom: 2rem; }
+    #capabilities .capabilities-grid { grid-template-columns: 1fr; }
+    #capabilities .cap-card { grid-template-columns: 1fr; gap: .35rem; }
+  }
+  @media (max-width: 768px) {
+    .hero { justify-content: center; }
+    .hero-content { padding: 6rem 1.5rem 3rem; }
+    .call-plate { width: 100%; }
+  }
+  @media (prefers-reduced-motion: reduce) { .call-plate { transition: none; } }
 </style>
 <script type="application/ld+json">
 {
@@ -993,19 +1070,19 @@
   </video>
   <div class="hero-overlay"></div>
   <div class="hero-content">
-    <p class="hero-eyebrow">BRO Industries · Sydney & Greater Western Sydney</p>
-    <h1 class="hero-title">Need a<br><span class="accent">Plumber?</span></h1>
+    <h1 class="hero-title">Need a<br>plumber?</h1>
     <p class="hero-sub">Licensed plumbing across Sydney and Greater Western Sydney. Delivered with honesty, integrity, and 55+ years of combined expertise.</p>
-    <div class="hero-cta-row">
-      <a href="tel:0429967151" class="btn-primary" data-call="hero">Call Jack<span class="cta-num"> 0429 967 151</span></a>
-      <a href="#contact" class="btn-outline">Request a Quote</a>
-    </div>
-    <div class="hero-trust-row">
-      <span class="trust-pill">Licensed &amp; Insured</span>
-      <span class="trust-pill">Family Operated</span>
-      <span class="trust-pill">Same Day Availability</span>
-      <span class="trust-pill">55+ Years Experience</span>
-    </div>
+    <a href="tel:0429967151" class="call-plate" data-call="hero">
+      <span class="call-plate-label">Call or text Jack</span>
+      <span class="call-plate-num">0429 967 151</span>
+    </a>
+    <p class="call-alt">Or call John on <a href="tel:0429523253" data-call="hero-john">0429 523 253</a>, or <a href="#contact">request a quote</a>.</p>
+    <ul class="hero-ticks">
+      <li>Licensed and insured</li>
+      <li>Family operated</li>
+      <li>Same day availability</li>
+      <li>24/7 emergencies</li>
+    </ul>
   </div>
 </section>
 
@@ -1034,7 +1111,7 @@
   <div class="contact-grid">
     <div class="contact-left">
       <div class="section-label">Get in Touch</div>
-      <h2 class="section-title" style="margin-bottom:1.5rem">Let's Talk<br><span class="accent">Plumbing</span></h2>
+      <h2 class="section-title" style="margin-bottom:1.5rem">Talk to a plumber, not a call centre</h2>
       <p class="contact-body">Call us for the fastest response, or send an enquiry and we'll get back to you within the hour. All quotes are free with no obligation. We service Sydney and all of greater western Sydney.</p>
       <div class="contact-items">
         <a href="tel:0429967151" class="contact-item contact-item--primary">
@@ -1083,7 +1160,7 @@
     </div>
 
     <div class="contact-right">
-      <div class="form-title">Request a <span class="accent">Quote</span></div>
+      <div class="form-title">Request a quote</div>
       <p class="form-sub">Free, no obligation. We'll get back to you within the hour.</p>
       <form class="form" id="quote-form">
         <div class="form-row">
@@ -1136,7 +1213,7 @@
   <div class="capabilities-header">
     <div>
       <div class="section-label">What We Do</div>
-      <h2 class="section-title">Comprehensive<br>Plumbing <span class="accent">Capabilities</span></h2>
+      <h2 class="section-title">What we do</h2>
     </div>
     <p class="section-lead">
       From emergency call-outs to full bathroom renovations, we carry out all facets of plumbing with the precision and care of a family business that stands behind every job.
@@ -1200,7 +1277,7 @@
 <!-- PROJECTS -->
 <section class="section" id="projects">
   <div class="section-label">Our Work</div>
-  <h2 class="section-title" style="margin-bottom:3rem">Selected <span class="accent">Projects</span></h2>
+  <h2 class="section-title" style="margin-bottom:3rem">Recent jobs</h2>
   <div class="projects-carousel-wrap">
     <button class="carousel-btn carousel-btn-prev" onclick="scrollCarousel(-1)" aria-label="Previous project">&#8592;</button>
     <div class="projects-carousel" id="projectsCarousel">
@@ -1256,7 +1333,7 @@
   </div>
   <div class="fullbleed-overlay">
     <p class="fullbleed-label">Our Commitment</p>
-    <h2 class="fullbleed-title">Honesty, integrity and <br><span class="accent">knowledge</span>. Every job.</h2>
+    <h2 class="fullbleed-title">Honesty, integrity and knowledge. Every job.</h2>
     <p class="fullbleed-sub">Over 55 combined years of experience, delivered with the accountability and care of a family business.</p>
     <a href="#contact" class="btn-primary">Work With Us</a>
   </div>
@@ -1267,7 +1344,7 @@
   <div class="reviews-header">
     <div>
       <div class="section-label">Client Testimonials</div>
-      <h2 class="section-title">Google <span class="accent">Reviews</span></h2>
+      <h2 class="section-title">What customers say</h2>
     </div>
     <a class="google-badge" href="https://www.google.com/search?q=BRO+Industries+plumbing+reviews" target="_blank" rel="noopener" aria-label="Read our Google reviews">
       <span class="google-g">G</span>
@@ -1306,7 +1383,7 @@
 <!-- TEAM -->
 <section class="section" id="team">
   <div class="section-label">The People</div>
-  <h2 class="section-title" style="margin-bottom:3rem">Meet the <span class="accent">Team</span></h2>
+  <h2 class="section-title" style="margin-bottom:3rem">Who you'll deal with</h2>
   <div class="team-grid">
     <div class="team-card">
       <div class="team-photo"><img src="images/john.jpg" alt="John McGrath, Founder and Master Plumber at BRO Industries"></div>
