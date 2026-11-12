@@ -60,7 +60,7 @@
   .meta { font-size: .72rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
 
   /* buttons */
-  .btn { display: inline-flex; align-items: center; justify-content: center; gap: .55rem; min-height: 54px; padding: 0 1.6rem; font-size: .78rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; border: 1.5px solid transparent; transition: background .2s var(--ease), color .2s var(--ease), border-color .2s var(--ease); }
+  .btn { border-radius: 999px; display: inline-flex; align-items: center; justify-content: center; gap: .55rem; min-height: 54px; padding: 0 1.6rem; font-size: .78rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; border: 1.5px solid transparent; transition: background .2s var(--ease), color .2s var(--ease), border-color .2s var(--ease); }
   .btn:focus-visible { outline: 2px solid var(--orange); outline-offset: 3px; }
   .btn-call { background: var(--orange); color: var(--ink); }
   .btn-call:hover { background: var(--orange-hover); }
@@ -166,11 +166,11 @@
   .details .v { font-weight: 600; text-align: right; }
   .details a.v:hover { color: var(--orange-text); }
   .details a.v:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
-  .form { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; background: var(--mist); padding: clamp(1.5rem, 3vw, 2.25rem); align-content: start; }
+  .form { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; background: var(--mist); padding: clamp(1.5rem, 3vw, 2.25rem); align-content: start; border-radius: 20px; }
   .field { display: flex; flex-direction: column; gap: .4rem; }
   .field--full { grid-column: 1 / -1; }
   .field label { font-size: .85rem; font-weight: 600; }
-  .field input, .field select, .field textarea { font: inherit; font-size: 1rem; color: var(--ink); background: #fff; border: 1px solid #CDD3D8; padding: .85rem .9rem; border-radius: 0; width: 100%; }
+  .field input, .field select, .field textarea { font: inherit; font-size: 1rem; color: var(--ink); background: #fff; border: 1px solid #CDD3D8; padding: .85rem .9rem; border-radius: 12px; width: 100%; }
   .field textarea { min-height: 130px; resize: vertical; }
   .field input:focus, .field select:focus, .field textarea:focus { outline: 2px solid var(--orange); outline-offset: 0; border-color: var(--orange); }
   .form .btn { grid-column: 1 / -1; width: 100%; cursor: pointer; font-family: inherit; }
