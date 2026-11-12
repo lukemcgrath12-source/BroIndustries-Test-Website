@@ -193,7 +193,8 @@
   .footer a:hover { color: #fff; }
   .footer a:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
   .socials { display: flex; gap: .75rem; margin-top: 1.25rem; }
-  .socials a { width: 38px; height: 38px; display: grid; place-items: center; border: 1px solid #39424A; }
+  .socials a { width: 40px; height: 40px; display: grid; place-items: center; border: 1px solid #39424A; border-radius: 50%; transition: border-color .2s var(--ease), transform .45s cubic-bezier(.34,1.56,.64,1); }
+  .socials a:active { transform: scale(.92); }
   .socials a:hover { border-color: #fff; }
   .socials svg { width: 16px; height: 16px; fill: currentColor; }
   .footer-base { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #2B3339; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; font-size: .82rem; color: #8A96A0; }
@@ -221,7 +222,8 @@
     .section-head { flex-direction: column; align-items: flex-start; }
     .form { grid-template-columns: 1fr; }
     .mbar { display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 120; gap: .5rem; padding: .6rem .75rem calc(.6rem + env(safe-area-inset-bottom)); background: #fff; border-top: 1px solid var(--rule); }
-    .mbar .btn { flex: 1; min-height: 52px; padding: 0 .5rem; }
+    .mbar .btn { flex: 1; min-height: 52px; padding: 0 .5rem; gap: .45rem; letter-spacing: .1em; }
+    .mbar .btn svg { width: 15px; height: 15px; fill: currentColor; }
   }
   @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn { transition: none; } }
 
@@ -498,8 +500,9 @@
 </footer>
 
 <div class="mbar" role="navigation" aria-label="Quick contact">
-  <a href="tel:0429967151" class="btn btn-call" data-call="mbar">Call Jack</a>
-  <a href="#contact" class="btn btn-line">Get a quote</a>
+  <a href="tel:0429967151" class="btn btn-call" data-call="mbar" aria-label="Call Jack on 0429 967 151"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>Jack</a>
+  <a href="tel:0429523253" class="btn btn-call" data-call="mbar-john" aria-label="Call John on 0429 523 253"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>John</a>
+  <a href="#contact" class="btn btn-line">Quote</a>
 </div>
 
 <script>
