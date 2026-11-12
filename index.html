@@ -1011,6 +1011,70 @@
     .call-plate { width: 100%; }
   }
   @media (prefers-reduced-motion: reduce) { .call-plate { transition: none; } }
+
+  /* ══ FLOW PASS ══ */
+  nav { padding-left: max(3rem, calc((100vw - 1200px)/2)); padding-right: max(3rem, calc((100vw - 1200px)/2)); }
+  nav .nav-cta { font-size: .95rem; letter-spacing: .04em; text-transform: none; border-radius: 4px; padding: .65rem 1.1rem; color: #17120C; }
+  .section, #capabilities, #reviews, #projects, #team { padding-left: max(3rem, calc((100vw - 1200px)/2)); padding-right: max(3rem, calc((100vw - 1200px)/2)); }
+  .section { padding-top: 6.5rem; padding-bottom: 6.5rem; }
+  .hero { min-height: 640px; height: 92vh; }
+  .hero-content { max-width: none; padding-left: max(3rem, calc((100vw - 1200px)/2)); padding-right: max(3rem, calc((100vw - 1200px)/2)); }
+
+  /* trust strip under hero */
+  .stats-bar { padding-left: max(3rem, calc((100vw - 1200px)/2)); padding-right: max(3rem, calc((100vw - 1200px)/2)); background: var(--dark-2); border-bottom: 1px solid var(--border); }
+  .stat-item { padding: 1.6rem 1rem; text-align: left; border-color: var(--border); }
+  .stat-number { font-size: 2.3rem; }
+  .stat-label { letter-spacing: .02em; text-transform: none; font-size: .9rem; color: var(--grey); }
+
+  /* jobs */
+  #projects .section-title { margin-bottom: 2rem !important; }
+  .project-category { letter-spacing: .04em; text-transform: none; }
+
+  /* banner: shorter, acts as a hand-off to the team and contact */
+  .fullbleed { height: 62vh; min-height: 420px; }
+
+  /* team: horizontal cards with direct lines */
+  .team-lead { color: var(--grey-light); font-size: 1.1rem; margin-bottom: 2.5rem; }
+  .team-grid { grid-template-columns: 1fr 1fr; max-width: none; }
+  .team-card { display: grid; grid-template-columns: 44% 1fr; background: var(--dark-2); }
+  .team-photo { aspect-ratio: 4/5; }
+  .team-info { display: flex; flex-direction: column; justify-content: flex-end; gap: .35rem; padding: 1.75rem; border-left: 0; }
+  .team-role { margin-bottom: 1rem; }
+  .team-call { align-self: flex-start; color: var(--orange); font-weight: 600; font-size: 1.05rem; border-bottom: 1px solid rgba(232,118,26,.5); padding-bottom: 2px; }
+  .team-call:hover { color: var(--orange-lt); border-color: var(--orange-lt); }
+  .team-call:focus-visible { outline: 2px solid var(--orange); outline-offset: 3px; }
+
+  /* contact last, so the page ends where people act */
+  .contact-section { padding-left: max(3rem, calc((100vw - 1200px)/2)); padding-right: max(3rem, calc((100vw - 1200px)/2)); border-top: 0; background: var(--dark-2); }
+  .contact-icon { background: rgba(232,118,26,.12); border: 1px solid rgba(232,118,26,.35); box-shadow: none; }
+  .contact-icon svg { width: 18px; height: 18px; fill: var(--orange); }
+  .contact-item-label { text-transform: none; letter-spacing: 0; font-size: .85rem; }
+  .form-title { text-transform: none; letter-spacing: -.01em; }
+  .form-field label { letter-spacing: .02em; text-transform: none; font-size: .85rem; }
+
+  @media (max-width: 1100px) { nav .nav-cta { display: none; } }
+  @media (max-width: 900px) {
+    .team-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 768px) {
+    nav, .section, #capabilities, #reviews, #projects, #team, .stats-bar, .contact-section, .hero-content { padding-left: 1.5rem; padding-right: 1.5rem; }
+    .section { padding-top: 4.5rem; padding-bottom: 4.5rem; }
+    .stat-item { padding: 1.2rem .5rem; }
+    .team-card { grid-template-columns: 40% 1fr; }
+    .team-info { padding: 1.1rem; }
+    .team-name { font-size: 1.3rem; }
+    .team-call { font-size: .95rem; }
+  }
+
+  .contact-item--primary .contact-icon { background: var(--orange); border-color: var(--orange); }
+  .contact-item--primary .contact-icon svg { fill: #17120C; }
+  .contact-right { background: none; }
+  .contact-left { padding-left: 0; }
+  .contact-right { padding-right: 0; }
+  #capabilities .capabilities-header { grid-template-columns: 1fr; gap: 1rem; align-items: start; }
+  #capabilities .section-lead { max-width: 40rem; }
+  #capabilities .capabilities-header { margin-bottom: 2.5rem; }
+  @media (max-width: 768px) { .contact-left, .contact-right { padding-left: 0; padding-right: 0; } }
 </style>
 <script type="application/ld+json">
 {
@@ -1061,6 +1125,7 @@
     <li><a href="#reviews">Reviews</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
+  <a href="tel:0429967151" class="nav-cta" data-call="nav">Call 0429 967 151</a>
 </nav>
 
 <!-- HERO -->
@@ -1105,108 +1170,6 @@
     <div class="stat-label">Google Rating</div>
   </div>
 </div>
-
-<!-- CONTACT -->
-<section class="contact-section" id="contact">
-  <div class="contact-grid">
-    <div class="contact-left">
-      <div class="section-label">Get in Touch</div>
-      <h2 class="section-title" style="margin-bottom:1.5rem">Talk to a plumber, not a call centre</h2>
-      <p class="contact-body">Call us for the fastest response, or send an enquiry and we'll get back to you within the hour. All quotes are free with no obligation. We service Sydney and all of greater western Sydney.</p>
-      <div class="contact-items">
-        <a href="tel:0429967151" class="contact-item contact-item--primary">
-          <div class="contact-icon">📞</div>
-          <div>
-            <div class="contact-item-label">Call or Text Jack</div>
-            <div class="contact-item-value contact-item-value--bold">0429 967 151</div>
-          </div>
-        </a>
-        <a href="tel:0429523253" class="contact-item contact-item--primary">
-          <div class="contact-icon">📞</div>
-          <div>
-            <div class="contact-item-label">Call or Text John</div>
-            <div class="contact-item-value contact-item-value--bold">0429 523 253</div>
-          </div>
-        </a>
-        <a href="mailto:jack@broindustries.com.au" class="contact-item">
-          <div class="contact-icon">✉</div>
-          <div>
-            <div class="contact-item-label">Email Jack</div>
-            <div class="contact-item-value contact-item-value--email">jack@broindustries.com.au</div>
-          </div>
-        </a>
-        <a href="mailto:john@broindustries.com.au" class="contact-item">
-          <div class="contact-icon">✉</div>
-          <div>
-            <div class="contact-item-label">Email John</div>
-            <div class="contact-item-value contact-item-value--email">john@broindustries.com.au</div>
-          </div>
-        </a>
-        <div class="contact-item">
-          <div class="contact-icon">📍</div>
-          <div>
-            <div class="contact-item-label">Service Area</div>
-            <div class="contact-item-value">Sydney & Greater West</div>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-icon">⚡</div>
-          <div>
-            <div class="contact-item-label">Emergency Line</div>
-            <div class="contact-item-value">24 / 7 Available</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="contact-right">
-      <div class="form-title">Request a quote</div>
-      <p class="form-sub">Free, no obligation. We'll get back to you within the hour.</p>
-      <form class="form" id="quote-form">
-        <div class="form-row">
-          <div class="form-field">
-            <label for="f-name">Full Name</label>
-            <input type="text" id="f-name" name="name" placeholder="Your name" required>
-          </div>
-          <div class="form-field">
-            <label for="f-phone">Phone Number</label>
-            <input type="tel" id="f-phone" name="phone" placeholder="04XX XXX XXX" required>
-          </div>
-        </div>
-        <div class="form-field">
-          <label for="f-email">Email Address</label>
-          <input type="email" id="f-email" name="email" placeholder="your@email.com">
-        </div>
-        <div class="form-field">
-          <label for="f-service">Service Required</label>
-          <select id="f-service" name="service">
-            <option value="" disabled selected>Select a service...</option>
-            <option>Blocked Drains</option>
-            <option>General Plumbing</option>
-            <option>Bathroom Renovation</option>
-            <option>Hot Water System</option>
-            <option>Gas Fitting</option>
-            <option>Leak Detection</option>
-            <option>Drainage</option>
-            <option>Emergency Plumbing</option>
-            <option>Other</option>
-          </select>
-        </div>
-        <div class="form-field">
-          <label for="f-msg">Tell Us About the Job</label>
-          <textarea id="f-msg" name="message" placeholder="Describe your plumbing issue or project..."></textarea>
-        </div>
-        <div class="form-submit">
-          <button type="submit" id="form-btn">Send Enquiry</button>
-        </div>
-        <div id="form-success" style="display:none; background:var(--dark-2); padding:1.5rem 1.25rem; border-left:3px solid var(--orange); margin-top:2px;">
-          <div style="font-family:'Barlow Condensed',sans-serif; font-size:0.75rem; font-weight:800; letter-spacing:0.2em; text-transform:uppercase; color:var(--orange); margin-bottom:0.4rem;">Enquiry Received</div>
-          <div style="font-size:0.9rem; color:var(--grey-light); line-height:1.6;">Thanks, your enquiry has been received. We'll be in touch shortly.</div>
-        </div>
-      </form>
-    </div>
-  </div>
-</section>
 
 <!-- CAPABILITIES -->
 <section class="section" id="capabilities">
@@ -1272,7 +1235,7 @@
   </div>
 </section>
 
-<div class="divider"></div>
+
 
 <!-- PROJECTS -->
 <section class="section" id="projects">
@@ -1318,27 +1281,6 @@
   </div>
 </section>
 
-<!-- FULL-BLEED BAND -->
-<div class="fullbleed">
-  <img src="images/bro-harbour-job.jpg" loading="lazy" alt="BRO Industries plumbers at work in Sydney">
-  <div class="fullbleed-glow"></div>
-  <div class="fullbleed-bar"></div>
-  <div class="fullbleed-dots" aria-hidden="true">
-    <span></span><span></span><span></span><span></span><span></span><span></span>
-    <span></span><span></span><span></span><span></span><span></span><span></span>
-    <span></span><span></span><span></span><span></span><span></span><span></span>
-    <span></span><span></span><span></span><span></span><span></span><span></span>
-    <span></span><span></span><span></span><span></span><span></span><span></span>
-    <span></span><span></span><span></span><span></span><span></span><span></span>
-  </div>
-  <div class="fullbleed-overlay">
-    <p class="fullbleed-label">Our Commitment</p>
-    <h2 class="fullbleed-title">Honesty, integrity and knowledge. Every job.</h2>
-    <p class="fullbleed-sub">Over 55 combined years of experience, delivered with the accountability and care of a family business.</p>
-    <a href="#contact" class="btn-primary">Work With Us</a>
-  </div>
-</div>
-
 <!-- REVIEWS -->
 <section class="section section-alt" id="reviews">
   <div class="reviews-header">
@@ -1378,26 +1320,152 @@
   </div>
 </section>
 
-<div class="divider"></div>
+
+
+<!-- FULL-BLEED BAND -->
+<div class="fullbleed">
+  <img src="images/bro-harbour-job.jpg" loading="lazy" alt="BRO Industries plumbers at work in Sydney">
+  <div class="fullbleed-glow"></div>
+  <div class="fullbleed-bar"></div>
+  <div class="fullbleed-dots" aria-hidden="true">
+    <span></span><span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span><span></span>
+  </div>
+  <div class="fullbleed-overlay">
+    <p class="fullbleed-label">Our Commitment</p>
+    <h2 class="fullbleed-title">Honesty, integrity and knowledge. Every job.</h2>
+    <p class="fullbleed-sub">Over 55 combined years of experience, delivered with the accountability and care of a family business.</p>
+    <a href="#contact" class="btn-primary">Work With Us</a>
+  </div>
+</div>
 
 <!-- TEAM -->
 <section class="section" id="team">
   <div class="section-label">The People</div>
-  <h2 class="section-title" style="margin-bottom:3rem">Who you'll deal with</h2>
+  <h2 class="section-title" style="margin-bottom:1rem">Who you'll deal with</h2>
+  <p class="team-lead">A family business. When you call, you get one of us.</p>
   <div class="team-grid">
     <div class="team-card">
       <div class="team-photo"><img src="images/john.jpg" alt="John McGrath, Founder and Master Plumber at BRO Industries"></div>
       <div class="team-info">
         <div class="team-name">John McGrath</div>
-        <div class="team-role">Founder & Master Plumber</div>
+        <div class="team-role">Founder &amp; Master Plumber</div>
+        <a class="team-call" href="tel:0429523253" data-call="team-john">Call John 0429 523 253</a>
       </div>
     </div>
     <div class="team-card">
       <div class="team-photo"><img src="images/jack.jpg" alt="Jack McGrath, Owner and Licensed Plumber at BRO Industries"></div>
       <div class="team-info">
         <div class="team-name">Jack McGrath</div>
-        <div class="team-role">Owner & Licensed Plumber</div>
+        <div class="team-role">Owner &amp; Licensed Plumber</div>
+        <a class="team-call" href="tel:0429967151" data-call="team-jack">Call Jack 0429 967 151</a>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="contact-grid">
+    <div class="contact-left">
+      <div class="section-label">Get in Touch</div>
+      <h2 class="section-title" style="margin-bottom:1.5rem">Talk to a plumber, not a call centre</h2>
+      <p class="contact-body">Call us for the fastest response, or send an enquiry and we'll get back to you within the hour. All quotes are free with no obligation. We service Sydney and all of greater western Sydney.</p>
+      <div class="contact-items">
+        <a href="tel:0429967151" class="contact-item contact-item--primary">
+          <div class="contact-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg></div>
+          <div>
+            <div class="contact-item-label">Call or Text Jack</div>
+            <div class="contact-item-value contact-item-value--bold">0429 967 151</div>
+          </div>
+        </a>
+        <a href="tel:0429523253" class="contact-item contact-item--primary">
+          <div class="contact-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg></div>
+          <div>
+            <div class="contact-item-label">Call or Text John</div>
+            <div class="contact-item-value contact-item-value--bold">0429 523 253</div>
+          </div>
+        </a>
+        <a href="mailto:jack@broindustries.com.au" class="contact-item">
+          <div class="contact-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm9 7.2L4.5 7v10h15V7z"/></svg></div>
+          <div>
+            <div class="contact-item-label">Email Jack</div>
+            <div class="contact-item-value contact-item-value--email">jack@broindustries.com.au</div>
+          </div>
+        </a>
+        <a href="mailto:john@broindustries.com.au" class="contact-item">
+          <div class="contact-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm9 7.2L4.5 7v10h15V7z"/></svg></div>
+          <div>
+            <div class="contact-item-label">Email John</div>
+            <div class="contact-item-value contact-item-value--email">john@broindustries.com.au</div>
+          </div>
+        </a>
+        <div class="contact-item">
+          <div class="contact-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 1 7 7c0 5.2-7 13-7 13S5 14.2 5 9a7 7 0 0 1 7-7zm0 4.5A2.5 2.5 0 1 0 12 11.5 2.5 2.5 0 0 0 12 6.5z"/></svg></div>
+          <div>
+            <div class="contact-item-label">Service Area</div>
+            <div class="contact-item-value">Sydney & Greater West</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 1 0 20 10 10 0 0 1 0-20zm1 5h-2v6l5 3 1-1.7-4-2.3z"/></svg></div>
+          <div>
+            <div class="contact-item-label">Emergency Line</div>
+            <div class="contact-item-value">24 / 7 Available</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-right">
+      <div class="form-title">Request a quote</div>
+      <p class="form-sub">Free, no obligation. We'll get back to you within the hour.</p>
+      <form class="form" id="quote-form">
+        <div class="form-row">
+          <div class="form-field">
+            <label for="f-name">Full Name</label>
+            <input type="text" id="f-name" name="name" placeholder="Your name" required>
+          </div>
+          <div class="form-field">
+            <label for="f-phone">Phone Number</label>
+            <input type="tel" id="f-phone" name="phone" placeholder="04XX XXX XXX" required>
+          </div>
+        </div>
+        <div class="form-field">
+          <label for="f-email">Email Address</label>
+          <input type="email" id="f-email" name="email" placeholder="your@email.com">
+        </div>
+        <div class="form-field">
+          <label for="f-service">Service Required</label>
+          <select id="f-service" name="service">
+            <option value="" disabled selected>Select a service...</option>
+            <option>Blocked Drains</option>
+            <option>General Plumbing</option>
+            <option>Bathroom Renovation</option>
+            <option>Hot Water System</option>
+            <option>Gas Fitting</option>
+            <option>Leak Detection</option>
+            <option>Drainage</option>
+            <option>Emergency Plumbing</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label for="f-msg">Tell Us About the Job</label>
+          <textarea id="f-msg" name="message" placeholder="Describe your plumbing issue or project..."></textarea>
+        </div>
+        <div class="form-submit">
+          <button type="submit" id="form-btn">Send Enquiry</button>
+        </div>
+        <div id="form-success" style="display:none; background:var(--dark-2); padding:1.5rem 1.25rem; border-left:3px solid var(--orange); margin-top:2px;">
+          <div style="font-family:'Barlow Condensed',sans-serif; font-size:0.75rem; font-weight:800; letter-spacing:0.2em; text-transform:uppercase; color:var(--orange); margin-bottom:0.4rem;">Enquiry Received</div>
+          <div style="font-size:0.9rem; color:var(--grey-light); line-height:1.6;">Thanks, your enquiry has been received. We'll be in touch shortly.</div>
+        </div>
+      </form>
     </div>
   </div>
 </section>
