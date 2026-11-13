@@ -1,275 +1,436 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18089771584"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18089771584');
+  gtag('config', 'G-Q0RG67DPN6');
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Terms of Use | BRO Industries</title>
-<meta name="description" content="The terms that apply when you use the BRO Industries website.">
+<title>Terms of use | BRO Industries</title>
+<meta name="description" content="Terms of use for the BRO Industries website, broindustries.com.au.">
 <link rel="canonical" href="https://broindustries.com.au/terms">
+<meta name="robots" content="index, follow">
+<link rel="icon" type="image/png" href="/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --orange:     #E8761A;
-    --orange-lt:  #F08030;
-    --black:      #0A0A0A;
-    --dark:       #111111;
-    --dark-2:     #1A1A1A;
-    --dark-3:     #222222;
-    --white:      #FFFFFF;
-    --grey:       #888888;
-    --grey-light: #CCCCCC;
-    --border:     #2A2A2A;
+    --white: #FFFFFF;
+    --mist: #F4F4F3;
+    --ink: #1A1514;
+    --ink-2: #241E1D;
+    --text: #4A4442;
+    --muted: #77706C;
+    --rule: #E6E3E1;
+    --orange: #E66C0F;
+    --orange-hover: #F07E25;
+    --orange-text: #B35208;
+    --wrap: 1200px;
+    --gutter: clamp(1.25rem, 5vw, 3rem);
+    --ease: cubic-bezier(.2,.8,.2,1);
   }
-
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; border: 0; }
-  html { scroll-behavior: smooth; line-height: 1.5; -webkit-text-size-adjust: 100%; }
-
-  body {
-    background: var(--dark);
-    color: var(--white);
-    font-family: 'Barlow', sans-serif;
-    -webkit-font-smoothing: antialiased;
-  }
-
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body { background: var(--white); color: var(--ink); font-family: 'Outfit', system-ui, -apple-system, 'Segoe UI', sans-serif; font-size: 17px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  img { display: block; max-width: 100%; }
   a { color: inherit; text-decoration: none; }
+  ul { list-style: none; }
+  .wrap { max-width: calc(var(--wrap) + var(--gutter) * 2); margin: 0 auto; padding: 0 var(--gutter); }
+  .skip { position: absolute; left: -999px; top: 0; background: var(--ink); color: #fff; padding: .6rem 1rem; z-index: 200; }
+  .skip:focus { left: 1rem; top: 1rem; }
 
-  /* NAV */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 200;
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 0 3rem; height: 72px;
-    background: rgba(10,10,10,0.93);
-    backdrop-filter: blur(16px);
-    border-bottom: 1px solid rgba(232,118,26,0.18);
-  }
-  nav::before {
-    content: ''; position: absolute;
-    top: 0; left: 0; right: 0; height: 3px;
-    background: var(--orange);
-  }
-  .nav-logo {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 1.25rem; font-weight: 900;
-    letter-spacing: -0.01em; text-transform: uppercase;
-    color: var(--white);
-  }
-  .nav-logo span { color: var(--orange); }
-  .nav-logo small {
-    display: block; font-size: 0.6rem; font-weight: 600;
-    letter-spacing: 0.3em; text-transform: uppercase;
-    color: var(--grey); margin-top: 2px;
-  }
-  .nav-cta {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.7rem; font-weight: 800;
-    letter-spacing: 0.18em; text-transform: uppercase;
-    color: var(--black); background: var(--orange);
-    padding: 0.6rem 1.5rem;
-    transition: background 0.2s ease;
-    display: inline-block;
-  }
-  .nav-cta:hover { background: var(--orange-lt); }
+  /* type */
+  h1, h2, h3 { font-family: 'Outfit', sans-serif; color: var(--ink); font-weight: 600; letter-spacing: -0.03em; line-height: 1.02; }
+  h1 { font-size: clamp(3rem, 7.4vw, 6.6rem); }
+  h2 { font-size: clamp(2.2rem, 4.4vw, 3.8rem); }
+  h3 { font-size: 1.3rem; font-weight: 600; letter-spacing: -0.015em; line-height: 1.2; }
+  .lead { font-size: clamp(1.1rem, 1.6vw, 1.3rem); color: var(--text); line-height: 1.55; max-width: 36rem; }
+  .meta { font-size: .72rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
 
-  /* PAGE */
-  .page {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 140px 3rem 8rem;
+  /* buttons */
+  .btn { border-radius: 999px; display: inline-flex; align-items: center; justify-content: center; gap: .55rem; min-height: 54px; padding: 0 1.6rem; font-size: .78rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; border: 1.5px solid transparent; position: relative; overflow: hidden; isolation: isolate; transition: background .2s var(--ease), color .2s var(--ease), border-color .2s var(--ease), transform .45s cubic-bezier(.34,1.56,.64,1); }
+  .btn:hover { transform: translateY(-2px); }
+  .btn:active { transform: scale(.95); transition-duration: .2s, .2s, .2s, .12s; }
+  .btn .rp { position: absolute; z-index: -1; border-radius: 50%; width: 24px; height: 24px; margin: -12px 0 0 -12px; background: rgba(255,255,255,.45); pointer-events: none; transform: scale(0); opacity: 1; animation: rp .65s cubic-bezier(.22,1,.36,1) forwards; }
+  .btn-line .rp { background: rgba(230,108,15,.35); }
+  @keyframes rp { to { transform: scale(22); opacity: 0; } }
+  .hero-phones a { transition: color .2s var(--ease), transform .45s cubic-bezier(.34,1.56,.64,1); }
+  .hero-phones a:active { transform: scale(.95); transition-duration: .2s, .12s; }
+  .btn:focus-visible { outline: 2px solid var(--orange); outline-offset: 3px; }
+  .btn-call { background: var(--orange); color: var(--ink); }
+  .btn-call:hover { background: var(--orange-hover); }
+  .btn-call:active { background: #D96A12; }
+  .btn-call svg { width: 17px; height: 17px; fill: currentColor; }
+  .btn-line { border-color: var(--ink); color: var(--ink); }
+  .btn-line:hover { background: var(--ink); color: #fff; }
+  .btn-line:active { background: #000; }
+  .btn-row { display: flex; flex-wrap: wrap; gap: .75rem; }
+  .hero-ctas { display: flex; flex-wrap: wrap; align-items: center; gap: 1.25rem 2.5rem; margin-top: .25rem; }
+  .hero-phones { display: flex; gap: 2.25rem; }
+  .hero-phones a { display: flex; align-items: center; gap: .8rem; color: #fff; font-size: 1.12rem; font-weight: 500; letter-spacing: .01em; transition: color .2s var(--ease); }
+  .hero-phones small { display: block; font-size: .68rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: #A39B97; margin-bottom: 2px; }
+  .hero-phones .ic { width: 40px; height: 40px; border-radius: 50%; border: 1px solid rgba(230,108,15,.55); display: grid; place-items: center; flex: none; transition: background .2s var(--ease), border-color .2s var(--ease); }
+  .hero-phones .ic svg { width: 16px; height: 16px; fill: var(--orange); transition: fill .2s var(--ease); }
+  .hero-phones a:hover { color: var(--orange-hover); }
+  .hero-phones a:hover .ic { background: var(--orange); border-color: var(--orange); }
+  .hero-phones a:hover .ic svg { fill: var(--ink); }
+  .hero-phones a:active .ic { transform: scale(.94); }
+  .hero-phones a:focus-visible { outline: 2px solid var(--orange); outline-offset: 4px; }
+  .textlink { font-size: .75rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; border-bottom: 1.5px solid var(--ink); padding-bottom: 3px; white-space: nowrap; }
+  .textlink:hover { color: var(--orange-text); border-color: var(--orange); }
+  .textlink:focus-visible { outline: 2px solid var(--orange); outline-offset: 3px; }
+
+  /* nav */
+  .nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,.94); backdrop-filter: blur(10px); border-bottom: 1px solid var(--rule); }
+  .nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 72px; gap: 2rem; }
+  .logo { display: inline-flex; align-items: center; gap: .7rem; font-weight: 500; font-size: .78rem; letter-spacing: .16em; text-transform: uppercase; line-height: 1; }
+  .logo img { width: 46px; height: 46px; }
+  .logo:focus-visible { outline: 2px solid var(--orange); outline-offset: 4px; }
+  .nav-links { display: flex; gap: 2rem; }
+  .nav-links a { font-size: .72rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--text); padding: .4rem 0; border-bottom: 1.5px solid transparent; }
+  .nav-links a:hover { color: var(--ink); border-color: var(--ink); }
+  .nav-links a:focus-visible { outline: 2px solid var(--orange); outline-offset: 3px; }
+  .nav .btn { min-height: 42px; padding: 0 1.1rem; }
+
+  /* footer */
+  .footer { background: var(--ink); color: #B9C2CA; padding: 4rem 0 2.5rem; font-size: .92rem; border-top: 1px solid #262D33; }
+  .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 2rem; }
+  .footer .logo { color: #fff; }
+  .footer .meta { color: #8A96A0; margin-bottom: .9rem; }
+  .footer li { margin-bottom: .45rem; }
+  .footer a:hover { color: #fff; }
+  .footer a:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
+  .socials { display: flex; gap: .75rem; margin-top: 1.25rem; }
+  .socials a { width: 40px; height: 40px; display: grid; place-items: center; border: 1px solid #39424A; border-radius: 50%; transition: border-color .2s var(--ease), transform .45s cubic-bezier(.34,1.56,.64,1); }
+  .socials a:active { transform: scale(.92); }
+  .socials a:hover { border-color: #fff; }
+  .socials svg { width: 16px; height: 16px; fill: currentColor; }
+  .footer-base { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #2B3339; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; font-size: .82rem; color: #8A96A0; }
+  .footer-base a { text-decoration: underline; text-underline-offset: 3px; }
+
+  /* mobile call bar */
+  .mbar { display: none; }
+
+  @media (max-width: 1000px) {
+    .nav-links { display: none; }
+    .services { grid-template-columns: 1fr 1fr; }
+    .reviews { grid-template-columns: 1fr; }
+    .contact { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 720px) {
+    body { font-size: 16px; padding-bottom: 76px; }
+    .nav .btn { display: none; }
+    .btn-row .btn { width: 100%; }
+    .hero-ctas { flex-direction: column; align-items: stretch; gap: 1.6rem; }
+    .hero-ctas .btn { width: 100%; }
+    .hero-phones { justify-content: space-between; gap: 1rem; }
+    .hero-phones a { font-size: 1.02rem; }
+    .hero-figure img { aspect-ratio: 4 / 3; }
+    .pillars, .jobs, .services, .team, .footer-grid { grid-template-columns: 1fr; }
+    .section-head { flex-direction: column; align-items: flex-start; }
+    .form { grid-template-columns: 1fr; }
+    .mbar { display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 120; gap: .5rem; padding: .6rem .75rem calc(.6rem + env(safe-area-inset-bottom)); background: #fff; border-top: 1px solid var(--rule); }
+    .mbar .btn { flex: 1; min-height: 52px; padding: 0 .5rem; gap: .45rem; letter-spacing: .1em; }
+    .mbar .btn svg { width: 15px; height: 15px; fill: currentColor; }
+    .mbar .btn-call { background: var(--ink); color: #fff; }
+    .mbar .btn-call:hover, .mbar .btn-call:active { background: #000; }
+    .mbar .btn-call svg { fill: var(--orange); }
+    .mbar .btn-call .rp { background: rgba(230,108,15,.4); }
+  }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn { transition: none; } }
+
+  /* ══ BRO brand: warm black, logo orange, geometric type ══ */
+  .hero { position: relative; overflow: hidden; background: var(--ink); color: #fff; padding-bottom: clamp(5rem, 10vw, 8rem); }
+  .hero h1 { color: #fff; max-width: 14ch; font-weight: 600; }
+  .hero h1 .ln { display: inline-block; }
+  .hero .lead { color: #CFC8C4; }
+  .hero .btn-line { border-color: rgba(255,255,255,.7); color: #fff; }
+  .hero .btn-line:hover { background: #fff; color: var(--ink); }
+  .hero-alt { color: #A39B97; }
+  .hero-alt a { color: #fff; }
+  .hero-alt a:hover { color: var(--orange-hover); }
+  .hero .wrap { position: relative; z-index: 1; }
+  .hero-ring { position: absolute; width: min(70vw, 820px); right: -14vw; top: -10vw; fill: none; stroke: var(--orange); stroke-width: .6; opacity: .55; stroke-dasharray: 604; stroke-dashoffset: 0; }
+  .hero-figure img { border-radius: 2px; }
+  .band { background: var(--orange); color: var(--ink); }
+  .band h2 { color: var(--ink); }
+  .band p { color: #3A1E08; }
+  .band .btn-call { background: var(--ink); color: #fff; }
+  .band .btn-call:hover { background: #000; }
+  .band .btn-line { border-color: var(--ink); color: var(--ink); }
+  .band .btn-line:hover { background: var(--ink); color: #fff; }
+  .stars { color: var(--orange); }
+  .job { overflow: hidden; }
+  .job .imgwrap { overflow: hidden; }
+  .job img { transition: transform .9s var(--ease); }
+  .job:hover img { transform: scale(1.035); }
+
+  /* holding screen */
+  .holding { position: fixed; inset: 0; z-index: 300; background: var(--ink); display: none; place-items: center; }
+  .js-intro .holding { display: grid; }
+  .holding-mark { position: relative; width: 132px; height: 132px; }
+  .holding-mark img { width: 100%; height: 100%; opacity: 0; transform: scale(.86); animation: markIn .7s var(--ease) .15s forwards; }
+  .holding-mark svg { position: absolute; inset: -14px; width: calc(100% + 28px); height: calc(100% + 28px); fill: none; stroke: var(--orange); stroke-width: 1.5; stroke-dasharray: 452; stroke-dashoffset: 452; transform: rotate(-90deg); animation: ringDraw 1s var(--ease) .2s forwards; }
+  .holding.is-out { animation: introOut .7s cubic-bezier(.7,0,.2,1) forwards; }
+  @keyframes markIn { to { opacity: 1; transform: scale(1); } }
+  @keyframes ringDraw { to { stroke-dashoffset: 0; } }
+  @keyframes introOut { to { transform: translateY(-100%); } }
+
+  /* entrance + reveals */
+  .js-anim .hero h1 .ln, .js-anim .hero .lead, .js-anim .hero .btn-row, .js-anim .hero-ctas, .js-anim .hero-alt, .js-anim .hero-figure { opacity: 0; transform: translateY(26px); }
+  .js-anim.is-ready .hero h1 .ln, .js-anim.is-ready .hero .lead, .js-anim.is-ready .hero .btn-row, .js-anim.is-ready .hero-ctas, .js-anim.is-ready .hero-alt, .js-anim.is-ready .hero-figure { opacity: 1; transform: none; transition: opacity .8s var(--ease), transform .8s var(--ease); }
+  .js-anim.is-ready .hero h1 .ln:nth-child(2) { transition-delay: .08s; }
+  .js-anim.is-ready .hero h1 .ln:nth-child(3) { transition-delay: .16s; }
+  .js-anim.is-ready .hero .lead { transition-delay: .26s; }
+  .js-anim.is-ready .hero .btn-row, .js-anim.is-ready .hero-ctas { transition-delay: .34s; }
+  .js-anim.is-ready .hero-alt { transition-delay: .4s; }
+  .js-anim.is-ready .hero-figure { transition-delay: .48s; }
+  .js-anim .hero-ring { stroke-dashoffset: 604; }
+  .js-anim.is-ready .hero-ring { stroke-dashoffset: 0; transition: stroke-dashoffset 2.2s var(--ease) .2s; }
+  .js-anim [data-reveal] { opacity: 0; transform: translateY(28px); transition: opacity .9s var(--ease), transform .9s var(--ease); }
+  .js-anim [data-reveal].in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) {
+    .js-anim .hero *, .js-anim [data-reveal], .js-anim .hero-figure { opacity: 1 !important; transform: none !important; transition: none !important; }
+    .btn .rp { display: none; }
+    .btn:hover, .btn:active, .hero-phones a:active { transform: none; }
+    .js-anim .hero-ring { stroke-dashoffset: 0; }
+    .job img { transition: none; }
   }
 
-  .page-eyebrow {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.65rem; font-weight: 700;
-    letter-spacing: 0.45em; text-transform: uppercase;
-    color: var(--orange); margin-bottom: 1rem;
-    display: flex; align-items: center; gap: 0.75rem;
+  /* legal pages */
+  .legal-hero { background: var(--mist); border-bottom: 1px solid var(--rule); padding: clamp(3.5rem, 8vw, 6rem) 0 clamp(2.5rem, 5vw, 3.5rem); }
+  .crumb { display: flex; gap: .6rem; align-items: center; margin-bottom: 1.25rem; }
+  .crumb a { color: var(--muted); border-bottom: 1px solid transparent; }
+  .crumb a:hover { color: var(--ink); border-color: var(--ink); }
+  .crumb a:focus-visible { outline: 2px solid var(--orange); outline-offset: 3px; }
+  .legal-hero h1 { font-size: clamp(2.6rem, 6vw, 4.6rem); }
+  .legal-hero .lead { margin-top: 1.25rem; }
+  .updated { margin-top: 1.75rem; display: inline-flex; align-items: center; gap: .6rem; }
+  .updated::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--orange); }
+  .legal { display: grid; grid-template-columns: 15rem minmax(0, 1fr); gap: clamp(2rem, 6vw, 5rem); padding: clamp(3rem, 7vw, 5rem) 0 clamp(4rem, 9vw, 7rem); }
+  .toc { position: sticky; top: 104px; align-self: start; }
+  .toc .meta { margin-bottom: 1rem; }
+  .toc ol { list-style: none; counter-reset: t; border-left: 1px solid var(--rule); }
+  .toc li { counter-increment: t; }
+  .toc a { display: block; padding: .42rem 0 .42rem 1rem; margin-left: -1px; border-left: 2px solid transparent; font-size: .92rem; color: var(--text); line-height: 1.35; transition: color .2s var(--ease), border-color .2s var(--ease); }
+  .toc a:hover { color: var(--ink); }
+  .toc a.on { color: var(--ink); border-color: var(--orange); font-weight: 500; }
+  .toc a:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
+  .prose { max-width: 44rem; color: var(--text); }
+  .prose section { padding-top: 2.25rem; margin-top: 2.25rem; border-top: 1px solid var(--rule); scroll-margin-top: 96px; }
+  .prose section:first-child { padding-top: 0; margin-top: 0; border-top: 0; }
+  .prose h2 { font-size: clamp(1.45rem, 2.2vw, 1.8rem); letter-spacing: -0.02em; line-height: 1.15; margin-bottom: 1rem; }
+  .prose p + p, .prose p + ul, .prose ul + p { margin-top: 1rem; }
+  .prose ul { display: grid; gap: .55rem; }
+  .prose li { position: relative; padding-left: 1.4rem; }
+  .prose li::before { content: ""; position: absolute; left: 0; top: .72em; width: 8px; height: 1.5px; background: var(--orange); }
+  .prose strong { color: var(--ink); font-weight: 600; }
+  .prose a { color: var(--ink); border-bottom: 1px solid var(--orange); }
+  .prose a:hover { color: var(--orange-text); }
+  .prose a:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; }
+  .card-contact { margin-top: 1.25rem; padding: 1.5rem; border: 1px solid var(--rule); border-radius: 18px; background: var(--white); display: grid; gap: .35rem; }
+  .card-contact .who { color: var(--ink); font-weight: 600; }
+  .legal-cta { background: var(--ink); color: #D8D2CE; padding: clamp(3rem, 7vw, 4.5rem) 0; }
+  .legal-cta .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.5rem; }
+  .legal-cta h2 { color: #fff; font-size: clamp(1.8rem, 3.4vw, 2.6rem); }
+  .legal-cta .btn-line { border-color: #fff; color: #fff; }
+  .legal-cta .btn-line:hover { background: #fff; color: var(--ink); }
+  @media (max-width: 900px) {
+    .legal { grid-template-columns: 1fr; }
+    .toc { position: static; }
+    .toc ol { columns: 2; column-gap: 1.5rem; }
   }
-  .page-eyebrow::before {
-    content: ''; width: 28px; height: 1px;
-    background: var(--orange); opacity: 0.6;
-  }
-
-  .page-title {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: clamp(2.5rem, 6vw, 4rem);
-    font-weight: 900; line-height: 0.9;
-    letter-spacing: -0.01em; text-transform: uppercase;
-    color: var(--white); margin-bottom: 0.75rem;
-  }
-  .page-title .accent { color: var(--orange); }
-
-  .page-date {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.65rem; font-weight: 700;
-    letter-spacing: 0.2em; text-transform: uppercase;
-    color: var(--grey); margin-bottom: 3.5rem;
-  }
-
-  .divider { height: 1px; background: var(--border); margin-bottom: 3.5rem; }
-
-  .section { margin-bottom: 3rem; }
-
-  h2 {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 1.25rem; font-weight: 800;
-    text-transform: uppercase; letter-spacing: 0.04em;
-    color: var(--white); margin-bottom: 0.75rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid var(--border);
-  }
-
-  p {
-    font-size: 0.95rem; color: var(--grey-light);
-    line-height: 1.85; margin-bottom: 1rem;
-  }
-
-  ul {
-    margin: 0.5rem 0 1rem 1.5rem;
-  }
-  ul li {
-    font-size: 0.95rem; color: var(--grey-light);
-    line-height: 1.85; margin-bottom: 0.35rem;
-  }
-
-  .contact-block {
-    background: var(--dark-2);
-    border-left: 3px solid var(--orange);
-    padding: 1.5rem 1.75rem;
-    margin-top: 1rem;
-  }
-  .contact-block p { margin-bottom: 0.35rem; }
-  .contact-block a { color: var(--orange); }
-
-  /* FOOTER */
-  footer {
-    background: var(--black);
-    border-top: 1px solid var(--border);
-    padding: 2rem 3rem;
-    display: flex; align-items: center; justify-content: space-between;
-    flex-wrap: wrap; gap: 1rem;
-  }
-  .footer-credit {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.65rem; font-weight: 700;
-    letter-spacing: 0.1em; text-transform: uppercase;
-    color: var(--grey);
-  }
-  .footer-credit a {
-    text-decoration: underline; text-underline-offset: 3px;
-    transition: color 0.2s ease;
-  }
-  .footer-credit a:hover { color: var(--orange); }
-  .footer-logo {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 1.1rem; font-weight: 900;
-    text-transform: uppercase; color: var(--white);
-  }
-  .footer-logo span { color: var(--orange); }
-  .footer-back {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.65rem; font-weight: 700;
-    letter-spacing: 0.2em; text-transform: uppercase;
-    color: var(--grey); transition: color 0.2s ease;
-  }
-  .footer-back:hover { color: var(--orange); }
-
-  @media (max-width: 768px) {
-    nav { padding: 0 1.5rem; }
-    .page { padding: 120px 1.5rem 5rem; }
-    footer { padding: 2rem 1.5rem; }
+  @media (max-width: 720px) {
+    .toc ol { columns: 1; }
+    .legal-cta .btn { width: 100%; }
   }
 </style>
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav">
+  <div class="wrap">
+    <a href="/" class="logo" aria-label="BRO Industries, home"><img src="images/bro-logo.png" alt="" width="46" height="46"><span>Plumbing · Sydney</span></a>
+    <nav aria-label="Main">
+      <ul class="nav-links">
+        <li><a href="/#jobs">Recent jobs</a></li>
+        <li><a href="/#services">Services</a></li>
+        <li><a href="/#reviews">Reviews</a></li>
+        <li><a href="/#team">About</a></li>
+        <li><a href="/#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="tel:0429967151" class="btn btn-call" data-call="nav">Call 0429 967 151</a>
+  </div>
+</header>
 
-<nav>
-  <a href="/">
-    <div class="nav-logo">
-      <span>BRO</span> Industries
-      <small>Licensed Plumbing · Sydney</small>
+<main id="main">
+  <div class="legal-hero">
+    <div class="wrap">
+      <p class="crumb meta"><a href="/">Home</a> <span aria-hidden="true">/</span> <span>Legal</span></p>
+      <h1>Terms of use</h1>
+      <p class="lead">The rules for using the BRO Industries website.</p>
+      <p class="updated meta">Last updated 13 November 2026</p>
     </div>
-  </a>
-  <a href="tel:0429967151" class="nav-cta">0429 967 151</a>
-</nav>
-
-<div class="page">
-
-  <div class="page-eyebrow">Legal</div>
-  <h1 class="page-title">Terms of <span class="accent">Use</span></h1>
-  <div class="page-date">Effective date: 5 November 2026</div>
-  <div class="divider"></div>
-
-  <div class="section">
-    <h2>About these terms</h2>
-    <p>These terms cover your use of broindustries.com.au, the website of BRO Industries Pty Ltd (ABN 69 613 074 490) ("BRO Industries", "we", "us"). By using this website you agree to them. If you don't agree, please don't use the site.</p>
   </div>
 
-  <div class="section">
-    <h2>Using this website</h2>
-    <p>You can browse this website and use it to contact us about our services. Please don't use it for anything unlawful, try to interfere with how it works, or send us anything misleading, offensive or harmful through the enquiry form.</p>
+  <div class="wrap">
+    <div class="legal">
+      <nav class="toc" aria-label="On this page">
+        <p class="meta">On this page</p>
+        <ol>
+          <li><a href="#about">About these terms</a></li>
+          <li><a href="#using">Using this website</a></li>
+          <li><a href="#information">Information on this site</a></li>
+          <li><a href="#quotes">Quotes and work</a></li>
+          <li><a href="#acl">Australian Consumer Law</a></li>
+          <li><a href="#content">Our content</a></li>
+          <li><a href="#links">Links to other websites</a></li>
+          <li><a href="#liability">Liability</a></li>
+          <li><a href="#privacy">Your privacy</a></li>
+          <li><a href="#changes">Changes to these terms</a></li>
+          <li><a href="#law">Governing law</a></li>
+          <li><a href="#questions">Questions</a></li>
+        </ol>
+      </nav>
+      <div class="prose">
+        <section id="about">
+          <h2>About these terms</h2>
+          <p>These terms cover your use of broindustries.com.au, the website of BRO Industries Pty Ltd (ABN 69 613 074 490) ("BRO Industries", "we", "us"). By using this website you agree to them. If you don't agree, please don't use the site.</p>
+        </section>
+        <section id="using">
+          <h2>Using this website</h2>
+          <p>You can browse this website and use it to contact us about our services. Please don't use it for anything unlawful, try to interfere with how it works, or send us anything misleading, offensive or harmful through the enquiry form.</p>
+        </section>
+        <section id="information">
+          <h2>Information on this site</h2>
+          <p>We keep the information on this website accurate and up to date as best we can, but it is general information about our plumbing services only. It isn't advice for your situation and may change without notice. Photos show examples of our work, and finished results can vary from job to job.</p>
+        </section>
+        <section id="quotes">
+          <h2>Quotes and work</h2>
+          <p>Sending an enquiry through this website doesn't create a contract or a booking. Any quote, price or timeframe we give you is confirmed in writing, and any work we do for you is covered by that quote or agreement, not by these website terms.</p>
+        </section>
+        <section id="acl">
+          <h2>Australian Consumer Law</h2>
+          <p>Nothing in these terms excludes, restricts or changes any rights you have under the Australian Consumer Law or any other law that can't be excluded.</p>
+        </section>
+        <section id="content">
+          <h2>Our content</h2>
+          <p>The text, photos, logos and design on this website belong to BRO Industries or are used with permission. Please don't copy or reuse them without asking us first.</p>
+        </section>
+        <section id="links">
+          <h2>Links to other websites</h2>
+          <p>This website may link to other sites, such as social media, maps and review platforms. We don't control those sites and aren't responsible for their content or how they handle your information.</p>
+        </section>
+        <section id="liability">
+          <h2>Liability</h2>
+          <p>To the extent the law allows, we aren't liable for any loss or damage that comes from using this website or relying on its content, or from the site being unavailable. Where our liability can't be excluded but can be limited, it is limited to supplying the relevant information again.</p>
+        </section>
+        <section id="privacy">
+          <h2>Your privacy</h2>
+          <p>How we collect and handle your personal information is explained in our <a href="/privacy">privacy policy</a>.</p>
+        </section>
+        <section id="changes">
+          <h2>Changes to these terms</h2>
+          <p>We may update these terms from time to time. The current version is always on this page, with the date it was last updated.</p>
+        </section>
+        <section id="law">
+          <h2>Governing law</h2>
+          <p>These terms are governed by the laws of New South Wales, Australia, and you agree to the jurisdiction of its courts.</p>
+        </section>
+        <section id="questions">
+          <h2>Questions</h2>
+          <p>Questions about these terms? Get in touch.</p>
+          <div class="card-contact">
+            <span class="who">BRO Industries Pty Ltd</span>
+            <span>ABN 69 613 074 490 · Sydney and Greater Western Sydney, NSW</span>
+            <span>Jack <a href="tel:0429967151" data-call="legal-jack">0429 967 151</a> · <a href="mailto:jack@broindustries.com.au">jack@broindustries.com.au</a></span>
+            <span>John <a href="tel:0429523253" data-call="legal-john">0429 523 253</a> · <a href="mailto:john@broindustries.com.au">john@broindustries.com.au</a></span>
+          </div>
+        </section>
+      </div>
+    </div>
   </div>
 
-  <div class="section">
-    <h2>Information on this site</h2>
-    <p>We keep the information on this website accurate and up to date as best we can, but it is general information about our plumbing services only. It isn't advice for your situation and may change without notice. Photos show examples of our work and finished results can vary from job to job.</p>
+  <div class="legal-cta">
+    <div class="wrap">
+      <h2>Got a plumbing job?</h2>
+      <div class="btn-row">
+        <a href="tel:0429967151" class="btn btn-call" data-call="legal-cta"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>Call 0429 967 151</a>
+        <a href="/#contact" class="btn btn-line">Request a quote</a>
+      </div>
+    </div>
   </div>
+</main>
 
-  <div class="section">
-    <h2>Quotes and work</h2>
-    <p>Sending an enquiry through this website doesn't create a contract or a booking. Any quote, price or timeframe we give you is confirmed in writing, and any work we do for you is covered by that quote or agreement, not by these website terms.</p>
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a href="/" class="logo"><img src="images/bro-logo.png" alt="BRO Industries" width="72" height="72" style="width:72px;height:72px"></a>
+        <p style="margin-top:1rem;max-width:26rem">Licensed, family-run plumbers covering Sydney and Greater Western Sydney.</p>
+        <div class="socials"><a href="https://www.instagram.com/broindustries_/" target="_blank" rel="noopener" aria-label="BRO Industries on Instagram">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      </a><a href="https://www.facebook.com/p/Bro-Industries-Pty-Ltd-100063639082808/" target="_blank" rel="noopener" aria-label="BRO Industries on Facebook">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      </a></div>
+      </div>
+      <div>
+        <p class="meta">Contact</p>
+        <ul>
+          <li><a href="tel:0429967151" data-call="footer-jack">Jack 0429 967 151</a></li>
+          <li><a href="tel:0429523253" data-call="footer-john">John 0429 523 253</a></li>
+          <li><a href="mailto:jack@broindustries.com.au">jack@broindustries.com.au</a></li>
+          <li><a href="mailto:john@broindustries.com.au">john@broindustries.com.au</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="meta">Explore</p>
+        <ul>
+          <li><a href="/#jobs">Recent jobs</a></li>
+          <li><a href="/#services">Services</a></li>
+          <li><a href="/#reviews">Reviews</a></li>
+          <li><a href="/#team">About</a></li>
+          <li><a href="/#contact">Request a quote</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-base">
+      <span>&copy; 2026 BRO Industries Pty Ltd. Licensed and insured. ABN 69 613 074 490.</span>
+      <span><a href="/privacy">Privacy policy</a> &nbsp; <a href="/terms">Terms</a> &nbsp; Website by <a href="https://www.latitudemarketing.au/?utm_source=bro-industries&amp;utm_medium=referral&amp;utm_campaign=client_credit" target="_blank" rel="noopener">Latitude Marketing</a></span>
+    </div>
   </div>
-
-  <div class="section">
-    <h2>Australian Consumer Law</h2>
-    <p>Nothing in these terms excludes, restricts or changes any rights you have under the Australian Consumer Law or any other law that can't be excluded.</p>
-  </div>
-
-  <div class="section">
-    <h2>Our content</h2>
-    <p>The text, photos, logos and design on this website belong to BRO Industries or are used with permission. Please don't copy or reuse them without asking us first.</p>
-  </div>
-
-  <div class="section">
-    <h2>Links to other websites</h2>
-    <p>This website may link to other sites, such as social media, maps and review platforms. We don't control those sites and aren't responsible for their content or how they handle your information.</p>
-  </div>
-
-  <div class="section">
-    <h2>Liability</h2>
-    <p>To the extent the law allows, we aren't liable for any loss or damage that comes from using this website or relying on its content, or from the site being unavailable. Where our liability can't be excluded but can be limited, it is limited to supplying the relevant information again.</p>
-  </div>
-
-  <div class="section">
-    <h2>Your privacy</h2>
-    <p>How we collect and handle your personal information is explained in our <a href="/privacy">privacy policy</a>.</p>
-  </div>
-
-  <div class="section">
-    <h2>Changes to these terms</h2>
-    <p>We may update these terms from time to time. The current version is always on this page, with the date it was last updated.</p>
-  </div>
-
-  <div class="section">
-    <h2>Governing law</h2>
-    <p>These terms are governed by the laws of New South Wales, Australia, and you agree to the jurisdiction of its courts.</p>
-  </div>
-
-  <div class="section">
-    <h2>Questions</h2>
-    <p>If you have a question about these terms, call <a href="tel:0429967151">0429 967 151</a> or email <a href="mailto:jack@broindustries.com.au">jack@broindustries.com.au</a>.</p>
-  </div>
-
-</div>
-
-<footer>
-  <div class="footer-logo"><span>BRO</span> Industries</div>
-  <div class="footer-credit">Website by <a href="https://www.latitudemarketing.au/?utm_source=bro-industries&utm_medium=referral&utm_campaign=client_credit" target="_blank" rel="noopener">Latitude Marketing</a></div>
-  <a href="/" class="footer-back">← Back to home</a>
 </footer>
 
-  <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
-  <script defer src="/_vercel/insights/script.js"></script>
+<div class="mbar" role="navigation" aria-label="Quick contact">
+  <a href="tel:0429967151" class="btn btn-call" data-call="mbar" aria-label="Call BRO Industries on 0429 967 151"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>Call us</a>
+  <a href="/#contact" class="btn btn-line">Get a quote</a>
+</div>
+
+<script>
+  // highlight the current section in the contents list
+  (function () {
+    var links = [].slice.call(document.querySelectorAll('.toc a'));
+    if (!('IntersectionObserver' in window) || !links.length) return;
+    var map = {}; links.forEach(function (a) { map[a.getAttribute('href').slice(1)] = a; });
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { links.forEach(function (a) { a.classList.remove('on'); }); map[e.target.id] && map[e.target.id].classList.add('on'); } });
+    }, { rootMargin: '-20% 0px -70% 0px' });
+    document.querySelectorAll('.prose section').forEach(function (s) { io.observe(s); });
+  })();
+  // call tracking, same as the home page
+  document.querySelectorAll('a[href^="tel:"]').forEach(function (a) {
+    a.addEventListener('click', function () { if (window.gtag) gtag('event', 'phone_call', { link_location: a.getAttribute('data-call') || 'legal', phone: a.getAttribute('href').slice(4) }); });
+  });
+</script>
+<script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+<script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>
